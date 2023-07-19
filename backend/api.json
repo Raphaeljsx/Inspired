@@ -1,0 +1,53 @@
+{
+  "usuario": [
+    {
+      "id": "admin@email.com",
+      "email": "admin@email.com",
+      "nome": "Raphael Alves de Oliveira",
+      "senha": "1234",
+      "cep": "8473440",
+      "rua": "Rua Wilma Flor",
+      "numero": "767",
+      "estado": "SP",
+      "cidade": "São Paulo"
+    }
+  ],
+  "produto": [
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
+      "fotos": null
+    },
+    {
+      "id": "fone",
+      "nome": "Fone de Ouvido",
+      "usuario_id": "admin@email.com",
+      "preco": "320",
+      "vendido": "false",
+      "descricao": "Fone de ouvido JBL",
+      "fotos": null
+    }
+  ]
+}
