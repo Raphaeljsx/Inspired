@@ -13,3 +13,7 @@ export const api = {
   }
 }
 
+export function fetchCep(cep){
+ return axios.get(`https://viacep.com.br/ws/${ cep }/json/`)
+}
+

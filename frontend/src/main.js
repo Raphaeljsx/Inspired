@@ -1,7 +1,31 @@
 
+
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
+
 import App from './App.vue'
 import router from './router'
-import store from './store'
+import PageLoading from '@/components/PageLoading.vue'
 
-createApp(App).use(store).use(router).mount('#app')
+const app = createApp(App)
+
+app.component('PageLoading', PageLoading)
+
+app.config.globalProperties.$filters = {
+  currencyBRL(value) {
+    value = Number(value)
+    if(!isNaN(value)){
+      return value.toLocaleString('pt-BR', {
+        style: "currency",
+        currency: "BRL"
+      })
+    }else{
+      return ''
+    }
+  }
+}
+
+app.use(createPinia())
+app.use(router)
+
+app.mount('#app')

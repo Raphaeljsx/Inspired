@@ -5,14 +5,1323 @@
       "email": "admin@email.com",
       "nome": "Raphael Alves de Oliveira",
       "senha": "1234",
-      "cep": "8473440",
+      "cep": "08473440",
       "rua": "Rua Wilma Flor",
       "numero": "767",
       "estado": "SP",
       "cidade": "São Paulo"
+    },
+    {
+      "id": "employee@email.com",
+      "email": "employee@email.com",
+      "nome": "Dutra Cena",
+      "senha": "4455",
+      "cep": "08473440",
+      "rua": "Rua Wilma Flor",
+      "numero": "767",
+      "estado": "SP",
+      "cidade": "São Paulo"
+    },
+    {
+      "id": "leles@gmail.com",
+      "nome": "Leles Juzes",
+      "email": "leles@gmail.com",
+      "senha": "1234",
+      "cep": "08440340",
+      "rua": "Rua Almocrafe",
+      "numero": "999",
+      "bairro": "Vila Chabilândia",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    {
+      "id": "downilo@gmail.com",
+      "nome": "Danilo Lopes",
+      "email": "downilo@gmail.com",
+      "senha": "123",
+      "cep": "08440‑475",
+      "rua": "Rua André Feliciani",
+      "numero": "676",
+      "bairro": "Vila Chabilândia",
+      "cidade": "São Paulo",
+      "estado": "SP"
     }
   ],
   "produto": [
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": [
+        {
+          "src": "/src/assets/notebook.jpg",
+          "titulo": "Notebook de última geração"
+        }
+      ]
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
+      "fotos": null
+    },
+    {
+      "id": "fone",
+      "nome": "Fone de Ouvido",
+      "usuario_id": "admin@email.com",
+      "preco": "320",
+      "vendido": "false",
+      "descricao": "Fone de ouvido JBL",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "notebook",
+      "nome": "Notebook",
+      "usuario_id": "admin@email.com",
+      "preco": "4999",
+      "vendido": "false",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
+      "fotos": null
+    },
     {
       "id": "notebook",
       "nome": "Notebook",
@@ -41,12 +1350,57 @@
       "fotos": null
     },
     {
-      "id": "fone",
-      "nome": "Fone de Ouvido",
+      "id": "notebook",
+      "nome": "Notebook",
       "usuario_id": "admin@email.com",
-      "preco": "320",
+      "preco": "4999",
       "vendido": "false",
-      "descricao": "Fone de ouvido JBL",
+      "descricao": "Esse é um notebook de última geração.",
+      "fotos": null
+    },
+    {
+      "id": "mouse",
+      "nome": "Mouse",
+      "usuario_id": "admin@email.com",
+      "preco": "600",
+      "vendido": "false",
+      "descricao": "Mouse sem fio utilizado pelos maiores pro-players do Brasil.",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
+      "fotos": null
+    },
+    {
+      "id": "tv",
+      "nome": "TV",
+      "usuario_id": "admin@email.com",
+      "preco": "10000",
+      "vendido": "false",
+      "descricao": "TV 4k LED FULL HD SMART",
       "fotos": null
     }
   ]

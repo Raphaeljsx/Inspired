@@ -1,40 +1,43 @@
+<script setup>
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
+</script>
+
 <template>
-  <div id="app">
+  <div class="container_geral">
     <TheHeader />
     <main>
-      <router-view></router-view>
+      <router-view v-slot="{ Component }">
+        <transition mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
     <TheFooter />
   </div>
 </template>
 
-<script>
-import TheHeader from "@/components/TheHeader.vue";
-import TheFooter from "@/components/TheFooter.vue";
-export default {
-  setup() {
-    return {};
-  },
-  components: {
-    TheHeader,
-    TheFooter,
-  },
-};
-</script>
-
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#app {
+  max-width: 100%;
+  padding: 0;
+}
 
 :root {
   --cor-geral: #345;
   --cor-secundaria: #87f;
   --sombra: 0 4px 0px rgba(30, 60, 90, 0.2);
-  --font: "Poppins", Helvetica, Arial, sans-serif;
+  --font: 'Poppins', Helvetica, Arial, sans-serif;
   --hover: #65d;
+  --prize-color: #e80;
 }
 
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body,
@@ -54,7 +57,7 @@ ul {
 body {
   font-family: var(--font);
   color: var(--cor-geral);
-  background: url("./assets/pattern.svg") repeat top;
+  background: url('./assets/pattern.svg') repeat top;
 }
 
 a {
@@ -89,7 +92,7 @@ svg {
   transform: scale(1.1);
 }
 
-#app {
+.container_geral {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -97,6 +100,10 @@ svg {
 
 main {
   flex: 1;
+}
+
+label {
+  margin-bottom: 5px;
 }
 
 input,
@@ -107,16 +114,34 @@ textarea {
   box-shadow: 0 4px 8px rgba(30, 60, 90, 0.1);
   transition: all 0.3s;
   font-size: 1rem;
-  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
   margin-bottom: 15px;
 }
 
 input:hover,
-textarea:hover,
 input:focus,
+textarea:hover,
 textarea:focus {
   outline: none;
   box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
-  border-color: var(--cor-secundaria);
+  border: 1px solid var(--cor-secundaria);
+}
+
+.v-enter-active,
+.fade-leave-active {
+  transition: all 0.5s;
+}
+
+.v-enter-from {
+  transform: translate3d(0, -20px, 0);
+}
+
+.v-leave-to {
+  transform: translate3d(0, 20px, 0);
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>

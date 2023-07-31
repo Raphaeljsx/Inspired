@@ -1,38 +1,21 @@
+<script setup>
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+const search = ref('')
+const router = useRouter()
+function searchProducts() {
+  router.push({ query: { q: `${search.value}` } })
+}
+</script>
+
 <template>
   <div>
     <form>
-      <input
-        name="search"
-        id="search"
-        type="text"
-        v-model="search"
-        placeholder="Buscar.."
-      />
-      <input
-        type="submit"
-        id="lupa"
-        value="Buscar"
-        @click.prevent="searchProducts"
-      />
+      <input name="search" id="search" type="text" v-model="search" placeholder="Buscar.." />
+      <input type="submit" id="lupa" value="Buscar" @click.prevent="searchProducts" />
     </form>
   </div>
 </template>
-
-<script>
-export default {
-  name: "SearchProducts",
-  data() {
-    return {
-      search: "",
-    };
-  },
-  methods: {
-    searchProducts() {
-      this.$router.push({ query: { q: `${this.search}` } });
-    },
-  },
-};
-</script>
 
 <style scoped>
 form {
@@ -55,7 +38,7 @@ form {
 #lupa {
   width: 62px;
   height: 62px;
-  background: url("../assets/search.svg") no-repeat center;
+  background: url('../assets/search.svg') no-repeat center;
   text-indent: -150px;
   border: none;
   cursor: pointer;

@@ -1,63 +1,64 @@
+<script setup>
+import { ref, computed, onMounted, watch } from 'vue'
+import { useRoute } from 'vue-router'
+import { api } from '@/utils/services'
+import { serialize } from '@/utils/helpers'
+import productPagination from '@/components/PaginationProducts.vue'
+import LoadingPage from '@/components/PageLoading.vue'
+
+const products = ref(null)
+const productsPerPage = ref(9)
+const allProducts = ref(0)
+
+const route = useRoute()
+
+const url = computed(() => {
+  const query = serialize(route.query)
+  return `/produto?_limit=${productsPerPage.value}${query}`
+})
+
+function getProducts() {
+  products.value = null
+  api.get(url.value).then((response) => {
+    products.value = response.data
+    allProducts.value = Number(response.headers['x-total-count'])
+  })
+}
+
+watch(url, () => {
+  getProducts()
+})
+
+onMounted(() => {
+  getProducts()
+})
+</script>
+
 <template>
   <section class="products-container">
-    <div v-if="products && products.length" class="products">
-      <div class="product" v-for="product in products" :key="product.id">
-        <router-link to="/">
-          <img
-            v-if="product.fotos"
-            :src="product.fotos[0].src"
-            :alt="product.fotos[0].title"
-          />
-          <p class="prize">{{ product.preco }}</p>
-          <h2 class="title">{{ product.nome }}</h2>
-          <p class="description">{{ product.descricao }}</p>
-        </router-link>
+    <transition mode="out-in">
+      <div v-if="products && products.length" class="products" key="products">
+        <div class="product" v-for="(product, index) in products" :key="index">
+          <router-link :to="{ name: 'product', params: { id: product.id } }">
+            <img v-if="product.fotos" :src="product.fotos[0].src" :alt="product.fotos[0].titulo" />
+            <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
+            <h2 class="title">{{ product.nome }}</h2>
+            <p class="description">{{ product.descricao }}</p>
+          </router-link>
+        </div>
+
+        <productPagination :allProducts="allProducts" :productsPerPage="productsPerPage" />
       </div>
-    </div>
-    <div class="no-results" v-else-if="products && products.length == 0">
-      <p>Busca sem resultados. Tente outro termo.</p>
-    </div>
+      <div class="no-results" v-else-if="products && products.length == 0" key="sem-resultados">
+        <p>Busca sem resultados. Tente outro termo.</p>
+      </div>
+
+      <LoadingPage key="carragando" v-else />
+    </transition>
   </section>
 </template>
 
-<script>
-import { api } from "@/services";
-import { serialize } from "@/helpers";
-
-export default {
-  name: "ListProducts",
-  data() {
-    return {
-      products: null,
-      productsPerPag: 9,
-    };
-  },
-  computed: {
-    url() {
-      const query = serialize(this.$route.query);
-
-      return `/produto?_limit=${this.productsPerPag}${query}`;
-    },
-  },
-  methods: {
-    getProducts() {
-      api.get(this.url).then((response) => {
-        this.products = response.data;
-      });
-    },
-  },
-  watch: {
-    url() {
-      this.getProducts();
-    },
-  },
-  created() {
-    this.getProducts();
-  },
-};
-</script>
-
-<style scoped>
+<style>
 .products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -96,7 +97,7 @@ export default {
 
 .prize {
   font-weight: bold;
-  color: #e80;
+  color: var(--prize-color);
 }
 
 .no-results {

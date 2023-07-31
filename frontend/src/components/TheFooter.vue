@@ -4,15 +4,6 @@
   </footer>
 </template>
 
-<script>
-export default {
-  name: "TheFooter",
-  setup() {
-    return {};
-  },
-};
-</script>
-
 <style scoped>
 footer {
   top: 80px;

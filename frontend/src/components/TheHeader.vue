@@ -1,19 +1,21 @@
+<script setup>
+import { computed } from 'vue'
+import { useAuthStore } from '../stores/auth'
+
+const store = useAuthStore()
+const userName = computed(() => {
+  return store.usuario.nome.replace(/ .*/, '')
+})
+</script>
 <template>
   <header>
     <nav>
       <router-link to="/" class="logo"> 1NSPIRED </router-link>
-      <router-link to="/" class="btn"> Vender / Login </router-link>
+      <router-link v-if="store.login" to="/usuario" class="btn">{{ userName }}</router-link>
+      <router-link v-else to="/login" class="btn"> Vender / Login </router-link>
     </nav>
   </header>
 </template>
-
-<script>
-export default {
-  setup() {
-    return {};
-  },
-};
-</script>
 
 <style scoped>
 nav {
