@@ -2,7 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Produto from '../views/ProdutoView.vue'
 import Login from '../views/LoginView.vue'
-import usuario from "../views/usuario/UsuarioView.vue"
+import Usuario from "../views/usuario/UsuarioView.vue"
+import UsuarioProdutos from "@/views/usuario/UsuarioProdutosView.vue"
+import UsuarioEditar from "@/views/usuario/UsuarioEditar.vue"
+import UsuarioVendas from "@/views/usuario/UsuarioVendas.vue"
+import UsuarioCompras from "@/views/usuario/UsuarioCompras.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,8 +17,8 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path:'/product/:id',
-      name:'product',
+      path:'/produto/:id',
+      name:'produto',
       component: Produto,
       props: true
     },
@@ -25,8 +29,29 @@ const router = createRouter({
     },
      {
       path:'/usuario',
-      name: 'usuario',
-      component: usuario
+      component: Usuario,
+      children: [
+        {
+          path: '',
+          name: 'usuario',
+          component: UsuarioProdutos
+        },
+        {
+          path: 'compras',
+          name: 'compras',
+          component: UsuarioCompras
+        },
+        {
+          path: 'vendas',
+          name: 'vendas',
+          component: UsuarioVendas
+        },
+        {
+          path: 'editar',
+          name: 'usuario-editar',
+          component: UsuarioEditar
+        },
+      ]
     }
   ],
   scrollBehavior(){

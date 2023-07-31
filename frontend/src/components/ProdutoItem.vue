@@ -1,0 +1,37 @@
+<script setup>
+const props = defineProps(['produto'])
+</script>
+
+<template>
+  <div class="produto" v-if="produto">
+    <router-link class="produto-img" :to="{ name: 'produto', params: { id: produto.id } }">
+      <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo" />
+      <p>Ver Mais</p>
+    </router-link>
+    <div class="info">
+      <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>
+      <h2 class="titulo">{{ produto.nome }}</h2>
+      <slot></slot>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.produto {
+  display: grid;
+  grid-template-columns: minmax(100px, 200px) 1fr;
+  gap: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.info {
+  align-self: flex-end;
+}
+
+.produto-img {
+  border-radius: 4px;
+  overflow: hidden;
+  height: 100px;
+}
+</style>

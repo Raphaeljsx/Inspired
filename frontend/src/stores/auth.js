@@ -18,7 +18,8 @@ export const useAuthStore = defineStore('auth', {
           bairro :'',
           cidade:'',
           estado:''
-        }
+        },
+        usuario_produtos: null
       }
     },
   //actions --> Métodos
@@ -28,6 +29,21 @@ export const useAuthStore = defineStore('auth', {
     },
      updateUsuario(payload){
       this.usuario = Object.assign(this.usuario, payload)
+    },
+
+    update_Usuario_Produtos(payload){
+      this.usuario_produtos = payload
+    },
+
+    add_usuario_produtos(payload){
+      this.usuario_produtos.unshift(payload)
+    },
+
+    getUsuario_produtos(payload){
+      api.get(`/produto?usuario_id=${payload}`)
+        .then(response =>{
+          this.update_Usuario_Produtos(response.data)
+        })
     },
     getUsuario(payload){
       try {
@@ -49,6 +65,27 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
+     deslogarUsuario(){
+      try {
+        this.updateUsuario({
+         id:'',
+          nome:'',
+          email:'',
+          senha:'',
+          cep:'',
+          rua:'',
+          numero:'',
+          bairro :'',
+          cidade:'',
+          estado:''
+      })
+
+      this.updateLogin(false)
+      } catch (error) {
+        console.error("Erro ao tentar deslogar: " + error)
+      }
+    },
+   
     //Setters
     setNome(value){
       this.usuario.nome = value

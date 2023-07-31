@@ -39,7 +39,7 @@ onMounted(() => {
     <transition mode="out-in">
       <div v-if="products && products.length" class="products" key="products">
         <div class="product" v-for="(product, index) in products" :key="index">
-          <router-link :to="{ name: 'product', params: { id: product.id } }">
+          <router-link :to="{ name: 'produto', params: { id: product.id } }">
             <img v-if="product.fotos" :src="product.fotos[0].src" :alt="product.fotos[0].titulo" />
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
             <h2 class="title">{{ product.nome }}</h2>
