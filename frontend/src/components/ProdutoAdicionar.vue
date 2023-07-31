@@ -2,7 +2,10 @@
 
 <template>
   <div>
-    <p>Produto Adicionar</p>
+    <form class="adicionar-produto">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" />
+    </form>
   </div>
 </template>
 
