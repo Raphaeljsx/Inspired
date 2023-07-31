@@ -1428,6 +1428,104 @@
       "descricao": "Iphone 13 recentemente lançado pelo Bill Gates",
       "usuario_id": "downilo@gmail.com",
       "id": "3KyX4Al"
+    },
+    {
+      "nome": "teste",
+      "preco": 11212,
+      "fotos": {
+        "__v_isShallow": false,
+        "__v_isRef": true,
+        "_rawValue": null,
+        "_value": null
+      },
+      "descricao": "aaaaa",
+      "usuario_id": "downilo@gmail.com",
+      "id": "CZzm4cZ"
+    },
+    {
+      "nome": "teste",
+      "preco": 11212,
+      "fotos": {
+        "__v_isShallow": false,
+        "__v_isRef": true,
+        "_rawValue": null,
+        "_value": null
+      },
+      "descricao": "aaaaa",
+      "usuario_id": "downilo@gmail.com",
+      "id": "jvMW4My"
+    },
+    [
+      {
+        "nome": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": "",
+          "_value": ""
+        },
+        "preco": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": 0,
+          "_value": 0
+        },
+        "fotos": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": null,
+          "_value": null
+        },
+        "descricao": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": "",
+          "_value": ""
+        }
+      }
+    ],
+    [
+      {
+        "nome": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": "",
+          "_value": ""
+        },
+        "preco": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": 0,
+          "_value": 0
+        },
+        "fotos": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": null,
+          "_value": null
+        },
+        "descricao": {
+          "__v_isShallow": false,
+          "__v_isRef": true,
+          "_rawValue": "",
+          "_value": ""
+        }
+      }
+    ],
+    {
+      "nome": "tete2",
+      "preco": 1,
+      "fotos": null,
+      "descricao": "aaabbb",
+      "usuario_id": "admin@email.com",
+      "id": "kGHAWED"
+    },
+    {
+      "nome": "aass",
+      "preco": 1,
+      "fotos": null,
+      "descricao": "sex",
+      "usuario_id": "downilo@gmail.com",
+      "id": "Wzv2U14"
     }
   ]
 }

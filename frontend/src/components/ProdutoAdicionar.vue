@@ -1,16 +1,16 @@
 <script setup>
-import { ref, reactive } from 'vue'
+import { reactive } from 'vue'
 import { useAuthStore } from '../stores/auth'
 import { api } from '../utils/services'
 
 const store = useAuthStore()
 
-const produto = {
-  nome: ref(''),
-  preco: ref(0),
-  fotos: ref(null),
-  descricao: ref('')
-}
+const produto = reactive({
+  nome: '',
+  preco: 0,
+  fotos: null,
+  descricao: ''
+})
 
 function formatarProduto() {
   produto.usuario_id = store.usuario.id
