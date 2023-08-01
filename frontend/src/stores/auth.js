@@ -58,7 +58,6 @@ export const useAuthStore = defineStore('auth', {
     criarUsuario(paylod){
       try {
         this.updateUsuario( { id:paylod.email } )
-        console.log('Usuario criado com sucesso');
         return api.post('/usuario', paylod)
       } catch (error) {
         console.error('Erro ao criar usuário' + error);

@@ -9,9 +9,13 @@ const router = useRouter()
 const criar = ref(false)
 
 async function criarUsuario() {
-  await store.criarUsuario(store.usuario)
-  await store.getUsuario(store.usuario.email)
-  router.push({ name: 'usuario' })
+  try {
+    await store.criarUsuario(store.usuario)
+    await store.getUsuario(store.usuario.email)
+    router.push({ name: 'usuario' })
+  } catch (error) {
+    console.log(error)
+  }
 }
 </script>
 

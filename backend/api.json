@@ -1,4 +1,60 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "downilo@gmail.com",
+      "vendedor_id": "admin@email.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "admin@email.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um notebook de última geração.",
+        "fotos": [
+          {
+            "src": "/src/assets/notebook.jpg",
+            "titulo": "Notebook de última geração"
+          }
+        ]
+      },
+      "endereco": {
+        "cep": "08440‑475",
+        "rua": "Rua André Feliciani",
+        "numero": "676",
+        "bairro": "Vila Chabilândia",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 1
+    },
+    {
+      "comprador_id": "teste@teste.com",
+      "vendedor_id": "admin@email.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "admin@email.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um notebook de última geração.",
+        "fotos": [
+          {
+            "src": "/src/assets/notebook.jpg",
+            "titulo": "Notebook de última geração"
+          }
+        ]
+      },
+      "endereco": {
+        "cep": "03311-002",
+        "rua": "Viela Nilta França e Oliveira",
+        "numero": "898",
+        "bairro": "Vila Gomes Cardim",
+        "cidade": "São Paulo",
+        "estado": "SP"
+      },
+      "id": 2
+    }
+  ],
   "usuario": [
     {
       "id": "admin@email.com",
@@ -43,6 +99,18 @@
       "rua": "Rua André Feliciani",
       "numero": "676",
       "bairro": "Vila Chabilândia",
+      "cidade": "São Paulo",
+      "estado": "SP"
+    },
+    {
+      "id": "teste@teste.com",
+      "nome": "teste",
+      "email": "teste@gmail.com",
+      "senha": "123",
+      "cep": "03311-002",
+      "rua": "Viela Nilta França e Oliveira",
+      "numero": "898",
+      "bairro": "Vila Gomes Cardim",
       "cidade": "São Paulo",
       "estado": "SP"
     }

@@ -1,6 +1,54 @@
 <script setup>
 import UsuarioForm from '@/components/UsuarioForm.vue'
-defineProps('produto')
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '../stores/auth'
+import { api } from '../utils/services'
+
+const store = useAuthStore()
+const router = useRouter()
+
+const props = defineProps(['produto'])
+
+const compra = computed(() => {
+  return {
+    comprador_id: store.usuario.email,
+    vendedor_id: props.produto.usuario_id,
+    produto: props.produto,
+    endereco: {
+      cep: store.usuario.cep,
+      rua: store.usuario.rua,
+      numero: store.usuario.numero,
+      bairro: store.usuario.bairro,
+      cidade: store.usuario.cidade,
+      estado: store.usuario.estado
+    }
+  }
+})
+
+function criarTransacao() {
+  return api.post('/transacao', compra.value).then(() => {
+    router.push({ name: 'compras' })
+  })
+}
+
+async function criarUsuario() {
+  try {
+    await store.criarUsuario(store.usuario)
+    await store.getUsuario(store.usuario.email)
+    await criarTransacao()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+function finalizarCompra() {
+  if (store.login) {
+    criarTransacao()
+  } else {
+    criarUsuario()
+  }
+}
 </script>
 
 <template>
@@ -15,11 +63,12 @@ defineProps('produto')
 <style scoped>
 .titulo {
   font-size: 2rem;
-  text-align: center;
-  padding: 40px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .btn {
   width: 100%;
+  background: var(--prize-color);
 }
 </style>
