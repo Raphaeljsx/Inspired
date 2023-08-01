@@ -3,8 +3,24 @@ import { onMounted, watch } from 'vue'
 import ProdutoAdicionar from '../../components/ProdutoAdicionar.vue'
 import ProdutoItem from '../../components/ProdutoItem.vue'
 import { useAuthStore } from '../../stores/auth'
+import { api } from '../../utils/services'
 
 const store = useAuthStore()
+
+function deletarProduto(id) {
+  const confirmar = window.confirm('Deseja remover este produto?')
+
+  if (confirmar) {
+    api
+      .delete(`/produto/${id}`)
+      .then(() => {
+        store.getUsuario_produtos(store.usuario.email)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+}
 
 watch(
   () => store.login,
@@ -29,6 +45,7 @@ onMounted(() => {
       <li v-for="(produto, index) in store.usuario_produtos" :key="index">
         <ProdutoItem :produto="produto">
           <p>{{ produto.descricao }}</p>
+          <button class="deletar" @click="deletarProduto(produto.id)">excluir produto</button>
         </ProdutoItem>
       </li>
     </TransitionGroup>
@@ -38,6 +55,19 @@ onMounted(() => {
 <style scoped>
 h2 {
   margin-bottom: 20px;
+}
+
+.deletar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url('../../assets/remove.svg') no-repeat center center;
+  height: 24px;
+  width: 24px;
+  text-indent: -140px;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
 }
 
 .list-enter-active,

@@ -9,7 +9,8 @@ const produto = reactive({
   nome: '',
   preco: 0,
   fotos: null,
-  descricao: ''
+  descricao: '',
+  vendido: 'false'
 })
 
 function formatarProduto() {

@@ -1,9 +1,15 @@
 <script setup>
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import { fetchCep } from '../utils/services'
 
 const store = useAuthStore()
+const route = useRoute()
+
+const mostrarDadosLogin = computed(() => {
+  return !store.login || route.name === 'usuario-editar'
+})
 
 const nome = computed({
   get: () => store.usuario.nome,
@@ -65,14 +71,16 @@ const estado = computed({
 
 <template>
   <form>
-    <label for="nome">Nome</label>
-    <input type="text" name="nome" id="nome" v-model="nome" />
+    <div class="usuario" v-if="mostrarDadosLogin">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome" v-model="nome" />
 
-    <label for="email">Email</label>
-    <input type="text" name="email" id="email" v-model="email" />
+      <label for="email">Email</label>
+      <input type="text" name="email" id="email" v-model="email" />
 
-    <label for="senha">Senha</label>
-    <input type="password" name="senha" id="senha" v-model="senha" />
+      <label for="senha">Senha</label>
+      <input type="password" name="senha" id="senha" v-model="senha" />
+    </div>
 
     <label for="cep">Cep</label>
     <input type="text" name="cep" id="cep" v-model="cep" @keyup="preencherCep()" />
@@ -99,10 +107,15 @@ const estado = computed({
 </template>
 
 <style scoped>
-form {
+form,
+.usuario {
   display: grid;
   grid-template-columns: 80px 1fr;
   align-items: center;
+}
+
+.usuario {
+  grid-column: 1/3;
 }
 
 .button {

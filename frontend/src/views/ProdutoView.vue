@@ -1,14 +1,16 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { api } from '@/utils/services'
+import FinalizarCompra from '../components/FinalizarCompra.vue'
 import LoadingPage from '@/components/PageLoading.vue'
 
 const props = defineProps(['id'])
-const product = ref(null)
+const produto = ref(null)
+const finalizar = ref(false)
 
 function getProduct() {
   api.get(`/produto/${props.id}`).then((response) => {
-    product.value = response.data
+    produto.value = response.data
   })
 }
 
@@ -19,17 +21,20 @@ onMounted(() => {
 
 <template>
   <section>
-    <div v-if="product" class="produto">
-      <ul class="fotos" v-if="product.fotos">
-        <li v-for="(foto, index) in product.fotos" :key="index">
+    <div v-if="produto" class="produto">
+      <ul class="fotos" v-if="produto.fotos">
+        <li v-for="(foto, index) in produto.fotos" :key="index">
           <img :src="foto.src" :alt="foto.titulo" />
         </li>
       </ul>
       <div class="info">
-        <h1>{{ product.nome }}</h1>
-        <p class="preco">{{ $filters.currencyBRL(product.preco) }}</p>
-        <p class="descricao">{{ product.descricao }}</p>
-        <button class="btn" v-if="product.vendido === 'false'">Comprar</button>
+        <h1>{{ produto.nome }}</h1>
+        <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>
+        <p class="descricao">{{ produto.descricao }}</p>
+        <transition mode="out-in" v-if="produto.vendido === 'false'">
+          <button class="btn" v-if="!finalizar" @click="finalizar = true">Comprar</button>
+          <FinalizarCompra v-else :produto="produto" />
+        </transition>
         <button class="btn" v-else disabled>Comprar</button>
       </div>
     </div>

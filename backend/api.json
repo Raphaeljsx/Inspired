@@ -36,7 +36,7 @@
     },
     {
       "id": "downilo@gmail.com",
-      "nome": "Danilo Lopes",
+      "nome": "Mamilo Lopes",
       "email": "downilo@gmail.com",
       "senha": "123",
       "cep": "08440‑475",
@@ -1402,45 +1402,6 @@
       "vendido": "false",
       "descricao": "TV 4k LED FULL HD SMART",
       "fotos": null
-    },
-    {
-      "nome": "Tablet",
-      "preco": 535,
-      "fotos": {
-        "__v_isShallow": false,
-        "__v_isRef": true,
-        "_rawValue": null,
-        "_value": null
-      },
-      "descricao": "Tablet Xiaomi CV recém lançado com android 13",
-      "usuario_id": "downilo@gmail.com",
-      "id": "QbfhXpY"
-    },
-    {
-      "nome": "Iphone 13",
-      "preco": 5009,
-      "fotos": {
-        "__v_isShallow": false,
-        "__v_isRef": true,
-        "_rawValue": null,
-        "_value": null
-      },
-      "descricao": "Iphone 13 recentemente lançado pelo Bill Gates",
-      "usuario_id": "downilo@gmail.com",
-      "id": "3KyX4Al"
-    },
-    {
-      "nome": "teste",
-      "preco": 11212,
-      "fotos": {
-        "__v_isShallow": false,
-        "__v_isRef": true,
-        "_rawValue": null,
-        "_value": null
-      },
-      "descricao": "aaaaa",
-      "usuario_id": "downilo@gmail.com",
-      "id": "CZzm4cZ"
     },
     {
       "nome": "teste",
