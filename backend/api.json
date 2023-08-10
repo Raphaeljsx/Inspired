@@ -26,33 +26,6 @@
         "estado": "SP"
       },
       "id": 1
-    },
-    {
-      "comprador_id": "teste@teste.com",
-      "vendedor_id": "admin@email.com",
-      "produto": {
-        "id": "notebook",
-        "nome": "Notebook",
-        "usuario_id": "admin@email.com",
-        "preco": "4999",
-        "vendido": "false",
-        "descricao": "Esse é um notebook de última geração.",
-        "fotos": [
-          {
-            "src": "/src/assets/notebook.jpg",
-            "titulo": "Notebook de última geração"
-          }
-        ]
-      },
-      "endereco": {
-        "cep": "03311-002",
-        "rua": "Viela Nilta França e Oliveira",
-        "numero": "898",
-        "bairro": "Vila Gomes Cardim",
-        "cidade": "São Paulo",
-        "estado": "SP"
-      },
-      "id": 2
     }
   ],
   "usuario": [
@@ -92,25 +65,13 @@
     },
     {
       "id": "downilo@gmail.com",
-      "nome": "Mamilo Lopes",
+      "nome": "Danilo Lopes",
       "email": "downilo@gmail.com",
       "senha": "123",
       "cep": "08440‑475",
       "rua": "Rua André Feliciani",
       "numero": "676",
       "bairro": "Vila Chabilândia",
-      "cidade": "São Paulo",
-      "estado": "SP"
-    },
-    {
-      "id": "teste@teste.com",
-      "nome": "teste",
-      "email": "teste@gmail.com",
-      "senha": "123",
-      "cep": "03311-002",
-      "rua": "Viela Nilta França e Oliveira",
-      "numero": "898",
-      "bairro": "Vila Gomes Cardim",
       "cidade": "São Paulo",
       "estado": "SP"
     }
@@ -1472,89 +1433,22 @@
       "fotos": null
     },
     {
-      "nome": "teste",
-      "preco": 11212,
-      "fotos": {
-        "__v_isShallow": false,
-        "__v_isRef": true,
-        "_rawValue": null,
-        "_value": null
-      },
-      "descricao": "aaaaa",
-      "usuario_id": "downilo@gmail.com",
-      "id": "jvMW4My"
-    },
-    [
-      {
-        "nome": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": "",
-          "_value": ""
-        },
-        "preco": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": 0,
-          "_value": 0
-        },
-        "fotos": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": null,
-          "_value": null
-        },
-        "descricao": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": "",
-          "_value": ""
-        }
-      }
-    ],
-    [
-      {
-        "nome": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": "",
-          "_value": ""
-        },
-        "preco": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": 0,
-          "_value": 0
-        },
-        "fotos": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": null,
-          "_value": null
-        },
-        "descricao": {
-          "__v_isShallow": false,
-          "__v_isRef": true,
-          "_rawValue": "",
-          "_value": ""
-        }
-      }
-    ],
-    {
-      "nome": "tete2",
-      "preco": 1,
+      "nome": "Tablet",
+      "preco": 800,
       "fotos": null,
-      "descricao": "aaabbb",
-      "usuario_id": "admin@email.com",
-      "id": "kGHAWED"
+      "descricao": "aaaaaa",
+      "vendido": "false",
+      "usuario_id": "",
+      "id": "E3XXXHR"
     },
     {
-      "nome": "aass",
-      "preco": 1,
+      "nome": "Tablet",
+      "preco": 8000,
       "fotos": null,
-      "descricao": "sex",
+      "descricao": "aa",
+      "vendido": "false",
       "usuario_id": "downilo@gmail.com",
-      "id": "Wzv2U14"
+      "id": "njYnZuk"
     }
   ]
 }
