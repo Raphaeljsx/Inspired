@@ -10,7 +10,7 @@ const produto = reactive({
   preco: 0,
   fotos: null,
   descricao: '',
-  vendido: 'false'
+  vendido: false
 })
 
 function formatarProduto() {
@@ -20,7 +20,7 @@ function formatarProduto() {
 async function adicionarProduto() {
   formatarProduto()
   await api.post('/produto', produto).then(() => {
-    store.getUsuario_produtos(store.usuario.email)
+    store.getUsuario_produtos(store.usuario.id)
   })
 }
 </script>
