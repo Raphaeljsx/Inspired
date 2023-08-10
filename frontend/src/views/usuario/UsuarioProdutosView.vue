@@ -14,7 +14,7 @@ function deletarProduto(id) {
     api
       .delete(`/produto/${id}`)
       .then(() => {
-        store.getUsuario_produtos(store.usuario.email)
+        store.getUsuario_produtos(store.usuario.id)
       })
       .catch((error) => {
         console.log(error)
@@ -25,13 +25,13 @@ function deletarProduto(id) {
 watch(
   () => store.login,
   () => {
-    store.getUsuario_produtos(store.usuario.email)
+    store.getUsuario_produtos(store.usuario.id)
   }
 )
 
 onMounted(() => {
   if (store.login) {
-    store.getUsuario_produtos(store.usuario.email)
+    store.getUsuario_produtos(store.usuario.id)
   }
 })
 </script>

@@ -8,12 +8,13 @@ const router = useRouter()
 
 const login = {
   email: '',
-  password: ''
+  senha: ''
 }
 
 function logar() {
-  store.getUsuario(login.email)
-  router.push({ name: 'usuario' })
+  store.getUsuario(login.email, login.senha).then(() => {
+    router.push({ name: 'usuario' })
+  })
 }
 </script>
 
@@ -23,8 +24,8 @@ function logar() {
     <form action="">
       <label for="email">Email</label>
       <input type="email" name="email" id="email" v-model="login.email" />
-      <label for="password">Password</label>
-      <input type="password" name="password" id="password" v-model="login.password" />
+      <label for="senha">Senha</label>
+      <input type="senha" name="senha" id="senha" v-model="login.senha" />
       <button class="btn" @click.prevent="logar">Entrar</button>
     </form>
     <p class="perdeu">

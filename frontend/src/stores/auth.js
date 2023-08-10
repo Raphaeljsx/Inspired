@@ -1,148 +1,145 @@
-
 import { defineStore } from 'pinia'
 import { api } from '@/utils/services'
 
 export const useAuthStore = defineStore('auth', {
-   //state --> Propriedades reativas
-  state(){ 
-      return {
-        login: false,
-        usuario:{
-          id:'',
-          nome:'',
-          email:'',
-          senha:'',
-          cep:'',
-          rua:'',
-          numero:'',
-          bairro :'',
-          cidade:'',
-          estado:''
-        },
-        usuario_produtos: null
-      }
-    },
+  //state --> Propriedades reativas
+  state() {
+    return {
+      login: false,
+      usuario: {
+        id: '',
+        nome: '',
+        email: '',
+        senha: '',
+        cep: '',
+        rua: '',
+        numero: '',
+        bairro: '',
+        cidade: '',
+        estado: ''
+      },
+      usuario_produtos: null
+    }
+  },
   //actions --> Métodos
-  actions:{
-    updateLogin(payload){
+  actions: {
+    updateLogin(payload) {
       this.login = payload
     },
-     updateUsuario(payload){
+    updateUsuario(payload) {
       this.usuario = Object.assign(this.usuario, payload)
     },
 
-    update_Usuario_Produtos(payload){
+    update_Usuario_Produtos(payload) {
       this.usuario_produtos = payload
     },
 
-    add_usuario_produtos(payload){
+    add_usuario_produtos(payload) {
       this.usuario_produtos.unshift(payload)
     },
 
-    getUsuario_produtos(payload){
-      api.get(`/produto?usuario_id=${payload}`)
-        .then(response =>{
-          this.update_Usuario_Produtos(response.data)
-        })
-    },
-    getUsuario(payload){
-      try {
-       return api.get(`/usuario/${payload}`).then(response =>{
-         this.updateLogin(true)
-         this.updateUsuario(response.data)
+    getUsuario_produtos(id) {
+      api.get(`/produto?usuario_id=${id}`).then((response) => {
+        this.update_Usuario_Produtos(response.data)
       })
+    },
+    async getUsuario(email, senha) {
+      try {
+        return await api.post(`/usuario/login/`, { email, senha }).then((response) => {
+          this.updateLogin(true)
+          this.updateUsuario(response.data)
+        })
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     },
-    criarUsuario(paylod){
+    criarUsuario(paylod) {
       try {
-        this.updateUsuario( { id:paylod.email } )
-        return api.post('/usuario', paylod)
+        return api.post('/usuario/', paylod)
       } catch (error) {
-        console.error('Erro ao criar usuário' + error);
+        console.error('Erro ao criar usuário' + error)
       }
     },
 
-     deslogarUsuario(){
+    deslogarUsuario() {
       try {
         this.updateUsuario({
-         id:'',
-          nome:'',
-          email:'',
-          senha:'',
-          cep:'',
-          rua:'',
-          numero:'',
-          bairro :'',
-          cidade:'',
-          estado:''
-      })
+          id: '',
+          nome: '',
+          email: '',
+          senha: '',
+          cep: '',
+          rua: '',
+          numero: '',
+          bairro: '',
+          cidade: '',
+          estado: ''
+        })
 
-      this.updateLogin(false)
+        this.updateLogin(false)
       } catch (error) {
-        console.error("Erro ao tentar deslogar: " + error)
+        console.error('Erro ao tentar deslogar: ' + error)
       }
     },
-   
+
     //Setters
-    setNome(value){
+    setNome(value) {
       this.usuario.nome = value
     },
-    setEmail(value){
+    setEmail(value) {
       this.usuario.email = value
     },
 
     setSenha(value) {
-      this.usuario.senha = value;
+      this.usuario.senha = value
     },
     setCep(value) {
-      this.usuario.cep = value;
+      this.usuario.cep = value
     },
     setRua(value) {
-      this.usuario.rua = value;
+      this.usuario.rua = value
     },
     setNumero(value) {
-      this.usuario.numero = value;
+      this.usuario.numero = value
     },
-    setBairro(value){
-      this.usuario.bairro = value;
+    setBairro(value) {
+      this.usuario.bairro = value
     },
     setCidade(value) {
-      this.usuario.cidade = value;
+      this.usuario.cidade = value
     },
     setEstado(value) {
-      this.usuario.estado = value;
+      this.usuario.estado = value
     }
   },
   //getters --> Propriedades computadas
-  getters:{
-    getNome(){
+  getters: {
+    getNome() {
       return this.usuario.nome
     },
-    getEmail(){
+    getEmail() {
       return this.usuario.email
     },
-     getSenha() {
-      return this.usuario.senha;
+    getSenha() {
+      return this.usuario.senha
     },
     getCep() {
-      return this.usuario.cep;
+      return this.usuario.cep
     },
     getRua() {
-      return this.usuario.rua;
+      return this.usuario.rua
     },
     getNumero() {
-      return this.usuario.numero;
+      return this.usuario.numero
     },
     getBairro() {
-      return this.usuario.bairro;
+      return this.usuario.bairro
     },
     getCidade() {
-      return this.usuario.cidade;
+      return this.usuario.cidade
     },
     getEstado() {
-      return this.usuario.estado;
-    },
+      return this.usuario.estado
+    }
   }
 })

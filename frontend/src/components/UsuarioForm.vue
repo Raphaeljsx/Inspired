@@ -76,10 +76,10 @@ const estado = computed({
       <input type="text" name="nome" id="nome" v-model="nome" />
 
       <label for="email">Email</label>
-      <input type="text" name="email" id="email" v-model="email" />
+      <input type="text" name="email" id="createEmail" v-model="email" />
 
       <label for="senha">Senha</label>
-      <input type="password" name="senha" id="senha" v-model="senha" />
+      <input type="password" name="senha" id="createSenha" v-model="senha" />
     </div>
 
     <label for="cep">Cep</label>
