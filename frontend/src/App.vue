@@ -127,6 +127,10 @@ textarea:focus {
   border: 1px solid var(--cor-secundaria);
 }
 
+.invalido {
+  border: 1px solid red;
+}
+
 .v-enter-active,
 .fade-leave-active {
   transition: all 0.5s;

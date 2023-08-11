@@ -30,7 +30,7 @@ onMounted(() => {
       <h2>Vendas</h2>
       <div class="produtos-wrapper" v-for="(venda, index) in vendas" :key="index">
         <ProdutoItem v-if="venda.produto" :produto="venda.produto">
-          <p class="vendedor"><span>Comprador: </span>{{ venda.comprador_id }}</p>
+          <p class="vendedor"><span>Comprador: </span>{{ venda.comprador.nome }}</p>
         </ProdutoItem>
         <div class="entrega">
           <h3>Entrega:</h3>

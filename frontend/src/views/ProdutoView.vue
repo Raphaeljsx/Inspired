@@ -31,7 +31,7 @@ onMounted(() => {
         <h1>{{ produto.nome }}</h1>
         <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>
         <p class="descricao">{{ produto.descricao }}</p>
-        <transition mode="out-in" v-if="produto.vendido === 'false'">
+        <transition mode="out-in" v-if="produto.vendido === false">
           <button class="btn" v-if="!finalizar" @click="finalizar = true">Comprar</button>
           <FinalizarCompra v-else :produto="produto" />
         </transition>

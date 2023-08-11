@@ -48,4 +48,11 @@ model Transacao {
 
   produto_id Int     @unique
   produto    Produto @relation(fields: [produto_id], references: [id])
+
+  cep    String
+  rua    String
+  numero String
+  estado String
+  bairro String
+  cidade String
 }

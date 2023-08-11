@@ -14,7 +14,7 @@ const route = useRoute()
 
 const url = computed(() => {
   const query = serialize(route.query)
-  return `/produto?_limit=${productsPerPage.value}${query}`
+  return `/produto?limit=${productsPerPage.value}${query}`
 })
 
 function getProducts() {
@@ -38,7 +38,7 @@ onMounted(() => {
   <section class="products-container">
     <transition mode="out-in">
       <div v-if="products && products.length" class="products" key="products">
-        <div class="product" v-for="(product, index) in products" :key="index">
+        <div class="product" v-for="product in products" :key="product.id">
           <router-link :to="{ name: 'produto', params: { id: product.id } }">
             <img v-if="product.fotos" :src="product.fotos[0].src" :alt="product.fotos[0].titulo" />
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>

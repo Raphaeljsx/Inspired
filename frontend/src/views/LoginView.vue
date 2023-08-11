@@ -1,10 +1,12 @@
 <script setup>
 import LoginCreate from '@/components/LoginCreate.vue'
 import { useAuthStore } from '@/stores/auth.js'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const store = useAuthStore()
 const router = useRouter()
+const warning = ref(false)
 
 const login = {
   email: '',
@@ -13,7 +15,16 @@ const login = {
 
 function logar() {
   store.getUsuario(login.email, login.senha).then(() => {
-    router.push({ name: 'usuario' })
+    if (store.login === true) {
+      router.push({ name: 'usuario' })
+    } else {
+      warning.value = !warning.value
+      const campoEmail = document.getElementById('email')
+      const campoSenha = document.getElementById('senha')
+
+      campoEmail.classList.add('invalido')
+      campoSenha.classList.add('invalido')
+    }
   })
 }
 </script>
@@ -27,6 +38,9 @@ function logar() {
       <label for="senha">Senha</label>
       <input type="senha" name="senha" id="senha" v-model="login.senha" />
       <button class="btn" @click.prevent="logar">Entrar</button>
+      <p v-if="warning" class="warning">
+        *As suas credenciais de login não correspondem a nenhuma conta em nosso sistema.
+      </p>
     </form>
     <p class="perdeu">
       <a href="/" target="_blank">Perdeu a senha? Clique aqui.</a>
@@ -70,5 +84,11 @@ form {
 .perdeu a:hover {
   color: var(--cor-secundaria);
   text-decoration: underline;
+}
+
+p.warning {
+  margin-top: 20px;
+  text-align: center;
+  color: red;
 }
 </style>

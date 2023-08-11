@@ -12,17 +12,15 @@ const props = defineProps(['produto'])
 
 const compra = computed(() => {
   return {
-    comprador_id: store.usuario.email,
+    comprador_id: store.usuario.id,
     vendedor_id: props.produto.usuario_id,
-    produto: props.produto,
-    endereco: {
-      cep: store.usuario.cep,
-      rua: store.usuario.rua,
-      numero: store.usuario.numero,
-      bairro: store.usuario.bairro,
-      cidade: store.usuario.cidade,
-      estado: store.usuario.estado
-    }
+    produto_id: props.produto.id,
+    cep: store.usuario.cep,
+    rua: store.usuario.rua,
+    numero: store.usuario.numero,
+    bairro: store.usuario.bairro,
+    cidade: store.usuario.cidade,
+    estado: store.usuario.estado
   }
 })
 
