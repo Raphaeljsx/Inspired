@@ -52,7 +52,6 @@ route.get("/:id", async (req: Request, res: Response) => {
   const produto = await prisma.produto.findUnique({
     where: { id: Number(req.params.id) },
   });
-  console.log(produto);
 
   res.json(produto);
 });

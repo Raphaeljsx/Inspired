@@ -16,6 +16,13 @@ async function criarUsuario() {
     if (emailValido) {
       await store.criarUsuario(store.usuario)
       await store.getUsuario(store.usuario.email)
+
+      const user = {
+        ...store.usuario
+      }
+
+      localStorage.setItem('user', JSON.stringify(user))
+
       router.push({ name: 'usuario' })
     } else {
       warning.value = true
