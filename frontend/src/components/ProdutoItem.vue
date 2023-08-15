@@ -31,7 +31,7 @@ const props = defineProps(['produto'])
 .produto-img {
   border-radius: 4px;
   overflow: hidden;
-  height: 100px;
+  height: 130px;
 }
 
 .produto-img img {
