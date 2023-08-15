@@ -32,6 +32,7 @@ import TheFooter from '@/components/TheFooter.vue'
   --font: 'Poppins', Helvetica, Arial, sans-serif;
   --hover: #65d;
   --prize-color: #e80;
+  --disabled: #a99dfa;
 }
 
 * {
@@ -125,6 +126,10 @@ textarea:focus {
   outline: none;
   box-shadow: 0 6px 12px rgba(30, 60, 90, 0.2);
   border: 1px solid var(--cor-secundaria);
+}
+
+.invalido {
+  border: 1px solid red;
 }
 
 .v-enter-active,

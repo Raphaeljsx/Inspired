@@ -14,13 +14,13 @@ const route = useRoute()
 
 const url = computed(() => {
   const query = serialize(route.query)
-  return `/produto?_limit=${productsPerPage.value}${query}`
+  return `/produto?limit=${productsPerPage.value}${query}`
 })
 
 function getProducts() {
   products.value = null
   api.get(url.value).then((response) => {
-    products.value = response.data
+    products.value = response.data.estoque
     allProducts.value = Number(response.headers['x-total-count'])
   })
 }
@@ -38,9 +38,14 @@ onMounted(() => {
   <section class="products-container">
     <transition mode="out-in">
       <div v-if="products && products.length" class="products" key="products">
-        <div class="product" v-for="(product, index) in products" :key="index">
+        <div class="product" v-for="product in products" :key="product.id">
           <router-link :to="{ name: 'produto', params: { id: product.id } }">
-            <img v-if="product.fotos" :src="product.fotos[0].src" :alt="product.fotos[0].titulo" />
+            <img
+              class="photo"
+              v-if="product.foto"
+              :src="'http://localhost:3333/' + product.foto"
+              :alt="product.nome"
+            />
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
             <h2 class="title">{{ product.nome }}</h2>
             <p class="description">{{ product.descricao }}</p>
@@ -102,5 +107,11 @@ onMounted(() => {
 
 .no-results {
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

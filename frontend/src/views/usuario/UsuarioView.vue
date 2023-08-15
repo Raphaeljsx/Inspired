@@ -6,6 +6,7 @@ const router = useRouter()
 
 function deslogar() {
   store.deslogarUsuario()
+  localStorage.removeItem('user')
   router.push('/login')
 }
 </script>
@@ -30,7 +31,6 @@ function deslogar() {
           <button @click="deslogar">Deslogar</button>
         </li>
       </ul>
-      <!-- Página do Usuário: {{ store.usuario }} -->
     </nav>
     <router-view v-slot="{ Component }">
       <transition mode="out-in">

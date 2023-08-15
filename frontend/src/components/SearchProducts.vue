@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
+import { api } from '../utils/services'
 const search = ref('')
 const router = useRouter()
+const produtoApi = ref(null)
 function searchProducts() {
-  router.push({ query: { q: `${search.value}` } })
+  router.push({ query: { search: `${search.value}` } })
 }
 </script>
 

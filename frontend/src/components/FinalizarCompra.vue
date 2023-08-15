@@ -10,25 +10,31 @@ const router = useRouter()
 
 const props = defineProps(['produto'])
 
+const localstorage = JSON.parse(localStorage.getItem('user'))
+
 const compra = computed(() => {
   return {
-    comprador_id: store.usuario.email,
+    comprador_id: store.usuario.id,
     vendedor_id: props.produto.usuario_id,
-    produto: props.produto,
-    endereco: {
-      cep: store.usuario.cep,
-      rua: store.usuario.rua,
-      numero: store.usuario.numero,
-      bairro: store.usuario.bairro,
-      cidade: store.usuario.cidade,
-      estado: store.usuario.estado
-    }
+    produto_id: props.produto.id,
+    cep: store.usuario.cep,
+    rua: store.usuario.rua,
+    numero: store.usuario.numero,
+    bairro: store.usuario.bairro,
+    cidade: store.usuario.cidade,
+    estado: store.usuario.estado
   }
 })
 
+const headers = {
+  Authorization: `Bearer ${localstorage.token}`
+}
+
 function criarTransacao() {
-  return api.post('/transacao', compra.value).then(() => {
-    router.push({ name: 'compras' })
+  return api.post('/transacao', compra.value, { headers }).then(() => {
+    api.put(`/produto/${props.produto.id}`, { vendido: true }, { headers }).then(() => {
+      router.push({ name: 'compras' })
+    })
   })
 }
 

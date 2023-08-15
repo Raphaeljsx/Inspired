@@ -1,8 +1,13 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import { api } from '../utils/services'
 
 const route = useRoute()
+const paginatedData = ref(null)
+
+const currentPage = ref(1)
+const totalPages = ref(1)
 
 const props = defineProps({
   productsPerPage: {
@@ -18,13 +23,13 @@ const props = defineProps({
 function query(page) {
   return {
     ...route.query,
-    _page: page
+    page: page
   }
 }
 
 const rangedPages = computed(() => {
-  const currentPage = Number(route.query._page)
-  const range = 9
+  const currentPage = props.currentPage
+  const range = props.productsPerPage
   const offset = Math.ceil(range / 2)
   const total = totalPags.value
   const pagsArray = []

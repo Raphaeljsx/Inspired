@@ -27,15 +27,18 @@ model Usuario {
 }
 
 model Produto {
-  id         Int        @id @default(autoincrement())
-  nome       String
-  preco      String
-  vendido    Boolean
-  descricao  String
-  fotos      String?
+  id        Int     @id @default(autoincrement())
+  nome      String
+  preco     String
+  vendido   Boolean
+  descricao String
+
   usuario_id Int
-  usuario    Usuario    @relation(fields: [usuario_id], references: [id])
-  transacao  Transacao?
+  usuario    Usuario @relation(fields: [usuario_id], references: [id])
+
+  transacao Transacao? @relation(name: "transacao_produto")
+
+  foto String?
 }
 
 model Transacao {
@@ -47,5 +50,12 @@ model Transacao {
   vendedor    Usuario @relation(name: "transacao_vendedor", fields: [vendedor_id], references: [id])
 
   produto_id Int     @unique
-  produto    Produto @relation(fields: [produto_id], references: [id])
+  produto    Produto @relation(name: "transacao_produto", fields: [produto_id], references: [id])
+
+  cep    String
+  rua    String
+  numero String
+  estado String
+  bairro String
+  cidade String
 }

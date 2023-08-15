@@ -1,25 +1,24 @@
-import axios from "axios";
+import axios from 'axios'
 
 const axiosInstance = axios.create({
   baseURL: 'http://localhost:3333'
 })
 
 export const api = {
-  get(endpoint){
-    return axiosInstance.get(endpoint);
+  get(endpoint, options = null) {
+    return axiosInstance.get(endpoint, options)
   },
-  post(endpoint, body){
-     return axiosInstance.post(endpoint, body);
+  post(endpoint, body, options = null) {
+    return axiosInstance.post(endpoint, body, options)
   },
-   put(endpoint, body){
-     return axiosInstance.put(endpoint, body);
+  put(endpoint, body, options = null) {
+    return axiosInstance.put(endpoint, body, options)
   },
-  delete(endpoint){
-    return axiosInstance.delete(endpoint)
+  delete(endpoint, options = null) {
+    return axiosInstance.delete(endpoint, options)
   }
 }
 
-export function fetchCep(cep){
- return axios.get(`https://viacep.com.br/ws/${ cep }/json/`)
+export function fetchCep(cep) {
+  return axios.get(`https://viacep.com.br/ws/${cep}/json/`)
 }
-

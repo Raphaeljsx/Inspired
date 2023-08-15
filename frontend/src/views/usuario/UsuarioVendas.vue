@@ -6,6 +6,7 @@ import { api } from '../../utils/services'
 
 const vendas = ref(null)
 const store = useAuthStore()
+
 function getVendas() {
   api.get(`/transacao?vendedor_id=${store.usuario.id}`).then((response) => {
     vendas.value = response.data
@@ -30,7 +31,7 @@ onMounted(() => {
       <h2>Vendas</h2>
       <div class="produtos-wrapper" v-for="(venda, index) in vendas" :key="index">
         <ProdutoItem v-if="venda.produto" :produto="venda.produto">
-          <p class="vendedor"><span>Comprador: </span>{{ venda.comprador_id }}</p>
+          <p class="vendedor"><span>Comprador: </span>{{ venda.comprador.nome }}</p>
         </ProdutoItem>
         <div class="entrega">
           <h3>Entrega:</h3>

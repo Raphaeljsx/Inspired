@@ -1,27 +1,52 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { useAuthStore } from '../stores/auth'
 import { api } from '../utils/services'
 
 const store = useAuthStore()
+const storedName = localStorage.getItem('user')
+const parsedUser = JSON.parse(storedName)
 
 const produto = reactive({
   nome: '',
   preco: 0,
-  fotos: null,
+  foto: null,
   descricao: '',
   vendido: false
 })
 
-function formatarProduto() {
-  produto.usuario_id = store.usuario.id
-}
+const fileInput = ref(null)
 
 async function adicionarProduto() {
-  formatarProduto()
-  await api.post('/produto', produto).then(() => {
-    store.getUsuario_produtos(store.usuario.id)
-  })
+  const formData = new FormData()
+  formData.append('usuario_id', parsedUser.id)
+  formData.append('foto', fileInput.value.files[0])
+  formData.append('preco', produto.preco)
+  formData.append('nome', produto.nome)
+  formData.append('descricao', produto.descricao)
+  formData.append('vendido', produto.vendido)
+
+  try {
+    await api
+      .post('/produto', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      })
+      .then(() => {
+        store.getUsuario_produtos(parsedUser.id)
+      })
+  } catch (error) {
+    console.error('Erro: ' + error)
+  }
+}
+
+//TODO:Continuar o upload da imagem para o backend
+const handleFileUpload = async () => {
+  console.log('Arquivo Selecionado', fileInput.value?.files)
+
+  produto.foto = fileInput.value.files[0]
+  console.log(produto.foto)
 }
 </script>
 
@@ -38,8 +63,8 @@ async function adicionarProduto() {
       />
       <label for="preco">Preço (R$)</label>
       <input type="number" id="preco" name="preco" v-model="produto.preco" />
-      <label for="fotos">Fotos</label>
-      <input type="file" id="fotos" name="fotos" ref="fotos" />
+      <label for="foto">Foto</label>
+      <input type="file" id="foto" name="foto" ref="fileInput" @change="handleFileUpload()" />
       <label for="descricao">Descrição</label>
       <textarea
         id="descricao"

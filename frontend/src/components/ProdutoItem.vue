@@ -5,8 +5,7 @@ const props = defineProps(['produto'])
 <template>
   <div class="produto" v-if="produto">
     <router-link class="produto-img" :to="{ name: 'produto', params: { id: produto.id } }">
-      <img v-if="produto.fotos" :src="produto.fotos[0].src" :alt="produto.fotos[0].titulo" />
-      <p>Ver Mais</p>
+      <img v-if="produto.foto" :src="'http://localhost:3333/' + produto.foto" :alt="produto.nome" />
     </router-link>
     <div class="info">
       <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>
@@ -33,5 +32,16 @@ const props = defineProps(['produto'])
   border-radius: 4px;
   overflow: hidden;
   height: 100px;
+}
+
+.produto-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.preco {
+  color: var(--prize-color);
 }
 </style>
