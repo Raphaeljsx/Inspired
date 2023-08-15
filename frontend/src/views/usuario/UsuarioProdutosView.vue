@@ -33,6 +33,8 @@ onMounted(() => {
   if (store.login) {
     store.getUsuario_produtos(store.usuario.id)
   }
+
+  document.title = 'Usuário'
 })
 </script>
 

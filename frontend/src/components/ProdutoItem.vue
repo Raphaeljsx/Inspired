@@ -44,4 +44,12 @@ const props = defineProps(['produto'])
 .preco {
   color: var(--prize-color);
 }
+
+@media screen and (max-width: 600px) {
+  .produto {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+  }
+}
 </style>

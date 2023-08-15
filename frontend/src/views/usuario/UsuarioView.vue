@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth.js'
 const store = useAuthStore()
@@ -9,6 +10,10 @@ function deslogar() {
   localStorage.removeItem('user')
   router.push('/login')
 }
+
+onMounted(() => {
+  document.title = 'Usuário'
+})
 </script>
 
 <template>

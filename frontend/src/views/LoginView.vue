@@ -1,7 +1,7 @@
 <script setup>
 import LoginCreate from '@/components/LoginCreate.vue'
 import { useAuthStore } from '@/stores/auth.js'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const store = useAuthStore()
@@ -12,6 +12,10 @@ const login = {
   email: '',
   senha: ''
 }
+
+onMounted(() => {
+  document.title = 'Login'
+})
 
 function logar() {
   store.getUsuario(login.email, login.senha).then(() => {

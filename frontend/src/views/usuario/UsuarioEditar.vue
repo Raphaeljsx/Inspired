@@ -1,5 +1,6 @@
 <script setup>
 import UsuarioForm from '@/components/UsuarioForm.vue'
+import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../../stores/auth'
 import { api } from '../../utils/services'
@@ -8,6 +9,10 @@ const store = useAuthStore()
 const router = useRouter()
 
 const localstorage = JSON.parse(localStorage.getItem('user'))
+
+onMounted(() => {
+  document.title = 'Usuário | Editar'
+})
 
 const headers = {
   Authorization: `Bearer ${localstorage.token}`
