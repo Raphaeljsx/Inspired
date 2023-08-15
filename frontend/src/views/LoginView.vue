@@ -16,6 +16,13 @@ const login = {
 function logar() {
   store.getUsuario(login.email, login.senha).then(() => {
     if (store.login === true) {
+      const user = {
+        ...store.usuario,
+
+        login: store.login
+      }
+
+      localStorage.setItem('user', JSON.stringify(user))
       router.push({ name: 'usuario' })
     } else {
       warning.value = !warning.value

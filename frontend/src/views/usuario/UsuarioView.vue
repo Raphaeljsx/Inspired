@@ -6,6 +6,7 @@ const router = useRouter()
 
 function deslogar() {
   store.deslogarUsuario()
+  localStorage.removeItem('user')
   router.push('/login')
 }
 </script>

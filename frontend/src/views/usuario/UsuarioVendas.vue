@@ -6,6 +6,9 @@ import { api } from '../../utils/services'
 
 const vendas = ref(null)
 const store = useAuthStore()
+const storedName = localStorage.getItem('user')
+const parsedUser = JSON.parse(storedName)
+
 function getVendas() {
   api.get(`/transacao?vendedor_id=${store.usuario.id}`).then((response) => {
     vendas.value = response.data

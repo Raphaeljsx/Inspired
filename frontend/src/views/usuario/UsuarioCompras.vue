@@ -6,6 +6,8 @@ import { api } from '../../utils/services'
 
 const compras = ref(null)
 const store = useAuthStore()
+const storageItens = JSON.parse(localStorage.getItem('user'))
+
 function getCompras() {
   api.get(`/transacao?comprador_id=${store.usuario.id}`).then((response) => {
     compras.value = response.data

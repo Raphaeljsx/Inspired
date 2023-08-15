@@ -32,6 +32,7 @@ import TheFooter from '@/components/TheFooter.vue'
   --font: 'Poppins', Helvetica, Arial, sans-serif;
   --hover: #65d;
   --prize-color: #e80;
+  --disabled: #a99dfa;
 }
 
 * {

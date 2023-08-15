@@ -1,5 +1,3 @@
-
-
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
@@ -14,15 +12,20 @@ app.component('PageLoading', PageLoading)
 app.config.globalProperties.$filters = {
   currencyBRL(value) {
     value = Number(value)
-    if(!isNaN(value)){
+    if (!isNaN(value)) {
       return value.toLocaleString('pt-BR', {
-        style: "currency",
-        currency: "BRL"
+        style: 'currency',
+        currency: 'BRL'
       })
-    }else{
+    } else {
       return ''
     }
   }
+}
+
+const user = JSON.parse(localStorage.getItem('user')) || ''
+if (user) {
+  app.config.globalProperties.$user = user
 }
 
 app.use(createPinia())

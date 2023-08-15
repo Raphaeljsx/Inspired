@@ -1,6 +1,8 @@
 import { Router, Request, Response } from "express";
 import { prisma } from "../database";
 
+const multer = require("multer");
+const upload = multer({ dest: "public/uploads" });
 const route = Router();
 
 route.get("/", async (req: Request, res: Response) => {
@@ -46,9 +48,16 @@ route.get("/:id", async (req: Request, res: Response) => {
   res.json(produto);
 });
 
-route.post("/", async (req: Request, res: Response) => {
+route.post("/", upload.single("foto"), async (req: Request, res: Response) => {
   const produto = await prisma.produto.create({
-    data: { ...req.body, id: undefined, preco: req.body.preco.toString() },
+    data: {
+      ...req.body,
+      id: undefined,
+      preco: req.body.preco.toString(),
+      foto: "uploads/" + req.file?.filename,
+      usuario_id: Number(req.body.usuario_id),
+      vendido: req.body.vendido.toLowerCase() === "true",
+    },
   });
   res.json(produto);
 });

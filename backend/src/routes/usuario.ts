@@ -25,7 +25,7 @@ route.post("/login", async (req: Request, res: Response) => {
   });
 
   if (exist) {
-    res.json(exist);
+    res.json({ ...exist, senha: undefined });
   } else {
     res.status(401);
     res.json(null);

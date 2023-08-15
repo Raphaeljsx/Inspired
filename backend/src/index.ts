@@ -11,6 +11,7 @@ const app = express();
 const route = Router();
 const port = 3333;
 
+app.use(express.static("public"));
 app.use(express.json());
 app.use(cors({ origin: "*" }));
 

@@ -6,6 +6,8 @@ import { useAuthStore } from '../../stores/auth'
 import { api } from '../../utils/services'
 
 const store = useAuthStore()
+const storedName = localStorage.getItem('user')
+const parsedUser = JSON.parse(storedName)
 
 function deletarProduto(id) {
   const confirmar = window.confirm('Deseja remover este produto?')
@@ -14,7 +16,7 @@ function deletarProduto(id) {
     api
       .delete(`/produto/${id}`)
       .then(() => {
-        store.getUsuario_produtos(store.usuario.id)
+        store.getUsuario_produtos(parsedUser.id)
       })
       .catch((error) => {
         console.log(error)
@@ -23,15 +25,15 @@ function deletarProduto(id) {
 }
 
 watch(
-  () => store.login,
+  () => parsedUser.login,
   () => {
-    store.getUsuario_produtos(store.usuario.id)
+    store.getUsuario_produtos(parsedUser.id)
   }
 )
 
 onMounted(() => {
-  if (store.login) {
-    store.getUsuario_produtos(store.usuario.id)
+  if (parsedUser.login) {
+    store.getUsuario_produtos(parsedUser.id)
   }
 })
 </script>

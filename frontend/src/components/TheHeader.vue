@@ -1,17 +1,19 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import { useAuthStore } from '../stores/auth'
 
 const store = useAuthStore()
-const userName = computed(() => {
-  return store.usuario.nome.replace(/ .*/, '')
+const shortsName = computed(() => {
+  return store?.usuario?.nome?.split(' ')?.[0] || ''
 })
 </script>
 <template>
   <header>
     <nav>
       <router-link to="/" class="logo"> 1NSPIRED </router-link>
-      <router-link v-if="store.login" to="/usuario" class="btn">{{ userName }}</router-link>
+      <router-link v-if="store.usuario.nome" to="/usuario" class="btn">{{
+        shortsName
+      }}</router-link>
       <router-link v-else to="/login" class="btn"> Vender / Login </router-link>
     </nav>
   </header>

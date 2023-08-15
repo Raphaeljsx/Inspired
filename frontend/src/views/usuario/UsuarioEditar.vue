@@ -6,11 +6,14 @@ import { api } from '../../utils/services'
 
 const store = useAuthStore()
 const router = useRouter()
+const storedName = localStorage.getItem('user')
+const parsedUser = JSON.parse(storedName)
+
 function atualizarUsuario() {
   api
-    .put(`/usuario/${store.usuario.id}`, store.usuario)
+    .put(`/usuario/${parsedUser.id}`, store.usuario)
     .then(() => {
-      store.getUsuario(store.usuario.email)
+      store.getUsuario(parsedUser.email)
       router.push({ name: 'usuario' })
     })
     .catch((error) => {

@@ -40,7 +40,12 @@ onMounted(() => {
       <div v-if="products && products.length" class="products" key="products">
         <div class="product" v-for="product in products" :key="product.id">
           <router-link :to="{ name: 'produto', params: { id: product.id } }">
-            <img v-if="product.fotos" :src="product.fotos[0].src" :alt="product.fotos[0].titulo" />
+            <img
+              class="photo"
+              v-if="product.foto"
+              :src="'http://localhost:3333/' + product.foto"
+              :alt="product.nome"
+            />
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
             <h2 class="title">{{ product.nome }}</h2>
             <p class="description">{{ product.descricao }}</p>
@@ -102,5 +107,11 @@ onMounted(() => {
 
 .no-results {
   text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  .products {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

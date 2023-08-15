@@ -46,7 +46,6 @@ const rangedPages = computed(() => {
 
 const totalPags = computed(() => {
   const total = props.allProducts / props.productsPerPage
-  console.log(total)
   return total !== Infinity ? Math.ceil(total) : 0
 })
 </script>

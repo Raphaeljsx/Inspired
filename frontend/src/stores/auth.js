@@ -4,9 +4,10 @@ import { api } from '@/utils/services'
 export const useAuthStore = defineStore('auth', {
   //state --> Propriedades reativas
   state() {
+    let usuario = JSON.parse(localStorage.getItem('user'))
     return {
-      login: false,
-      usuario: {
+      login: usuario ? true : false,
+      usuario: usuario || {
         id: '',
         nome: '',
         email: '',
