@@ -1,12 +1,15 @@
 <script setup>
-import { onMounted, reactive, ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import ProdutoItem from '../../components/ProdutoItem.vue'
 import { useAuthStore } from '../../stores/auth'
 import { api } from '../../utils/services'
 
 const compras = ref(null)
 const store = useAuthStore()
-const storageItens = JSON.parse(localStorage.getItem('user'))
+
+onMounted(() => {
+  document.title = 'Usuário | Compras'
+})
 
 function getCompras() {
   api.get(`/transacao?comprador_id=${store.usuario.id}`).then((response) => {

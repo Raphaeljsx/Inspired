@@ -13,6 +13,7 @@ const store = useAuthStore()
 function getProduct() {
   api.get(`/produto/${props.id}`).then((response) => {
     produto.value = response.data
+    document.title = produto.value.nome
   })
 }
 
@@ -83,6 +84,9 @@ onMounted(() => {
 @media screen and (max-width: 600px) {
   .produto {
     grid-template-columns: 1fr;
+  }
+  .fotos {
+    grid-row: 2;
   }
 }
 </style>

@@ -31,7 +31,7 @@ const props = defineProps(['produto'])
 .produto-img {
   border-radius: 4px;
   overflow: hidden;
-  height: 100px;
+  height: 130px;
 }
 
 .produto-img img {
@@ -43,5 +43,13 @@ const props = defineProps(['produto'])
 
 .preco {
   color: var(--prize-color);
+}
+
+@media screen and (max-width: 600px) {
+  .produto {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    margin: 10px;
+  }
 }
 </style>

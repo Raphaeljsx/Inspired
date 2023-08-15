@@ -1,11 +1,15 @@
 <script setup>
-import { onMounted, reactive, ref, watch } from 'vue'
+import { onMounted, ref, watch } from 'vue'
 import ProdutoItem from '../../components/ProdutoItem.vue'
 import { useAuthStore } from '../../stores/auth'
 import { api } from '../../utils/services'
 
 const vendas = ref(null)
 const store = useAuthStore()
+
+onMounted(() => {
+  document.title = 'Usuário | Vendas'
+})
 
 function getVendas() {
   api.get(`/transacao?vendedor_id=${store.usuario.id}`).then((response) => {
@@ -71,5 +75,15 @@ h2 {
 h3 {
   justify-self: end;
   margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  .entrega {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  h3 {
+    justify-self: start;
+  }
 }
 </style>

@@ -33,6 +33,8 @@ onMounted(() => {
   if (store.login) {
     store.getUsuario_produtos(store.usuario.id)
   }
+
+  document.title = 'Usuário'
 })
 </script>
 
@@ -45,6 +47,7 @@ onMounted(() => {
       <li v-for="(produto, index) in store.usuario_produtos" :key="index">
         <ProdutoItem :produto="produto">
           <p>{{ produto.descricao }}</p>
+          <p>status: {{ produto.vendido ? 'Vendido' : 'Em estoque' }}</p>
           <button class="deletar" @click="deletarProduto(produto.id)">excluir produto</button>
         </ProdutoItem>
       </li>

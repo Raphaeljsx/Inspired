@@ -1,6 +1,10 @@
 <script setup>
 import SearchProducts from '@/components/SearchProducts.vue'
 import ListProducts from '@/components/ListProducts.vue'
+import { onMounted } from 'vue'
+onMounted(() => {
+  document.title = 'Inspired'
+})
 </script>
 
 <template>
