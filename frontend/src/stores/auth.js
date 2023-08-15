@@ -41,7 +41,7 @@ export const useAuthStore = defineStore('auth', {
 
     getUsuario_produtos(id) {
       api.get(`/produto?usuario_id=${id}`).then((response) => {
-        this.update_Usuario_Produtos(response.data)
+        this.update_Usuario_Produtos(response.data.todos)
       })
     },
     async getUsuario(email, senha) {

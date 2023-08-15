@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { prisma } from "../database";
 
 const route = Router();
+const { AuthMiddleware } = require("../../middlewares/auth.js");
 
 route.get("/", async (req: Request, res: Response) => {
   const comprador_id = req.query.comprador_id;
@@ -30,7 +31,7 @@ route.get("/", async (req: Request, res: Response) => {
   res.json(transacoes);
 });
 
-route.post("/", async (req: Request, res: Response) => {
+route.post("/", AuthMiddleware, async (req: Request, res: Response) => {
   const transacao = await prisma.transacao.create({
     data: { ...req.body, id: undefined },
   });

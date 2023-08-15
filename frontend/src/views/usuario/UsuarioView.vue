@@ -31,7 +31,6 @@ function deslogar() {
           <button @click="deslogar">Deslogar</button>
         </li>
       </ul>
-      <!-- Página do Usuário: {{ store.usuario }} -->
     </nav>
     <router-view v-slot="{ Component }">
       <transition mode="out-in">

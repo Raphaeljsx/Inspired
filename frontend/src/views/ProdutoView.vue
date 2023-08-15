@@ -24,11 +24,6 @@ onMounted(() => {
 <template>
   <section>
     <div v-if="produto" class="produto">
-      <!-- <ul class="fotos" v-if="produto.foto">
-        <li v-for="(foto, index) in produto.foto" :key="index">
-          <img :src="foto.foto" />
-        </li>
-      </ul> -->
       <div class="fotos" v-if="produto.foto">
         <img :src="'http://localhost:3333/' + produto.foto" :alt="produto.nome" />
       </div>

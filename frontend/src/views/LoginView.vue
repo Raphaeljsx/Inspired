@@ -17,9 +17,7 @@ function logar() {
   store.getUsuario(login.email, login.senha).then(() => {
     if (store.login === true) {
       const user = {
-        ...store.usuario,
-
-        login: store.login
+        ...store.usuario
       }
 
       localStorage.setItem('user', JSON.stringify(user))

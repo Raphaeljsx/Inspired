@@ -20,7 +20,7 @@ const url = computed(() => {
 function getProducts() {
   products.value = null
   api.get(url.value).then((response) => {
-    products.value = response.data
+    products.value = response.data.estoque
     allProducts.value = Number(response.headers['x-total-count'])
   })
 }

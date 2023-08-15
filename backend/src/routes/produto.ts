@@ -24,9 +24,16 @@ route.get("/", async (req: Request, res: Response) => {
     where: {
       usuario_id: usuario_id ? Number(usuario_id) : undefined,
       nome: { contains: search ? String(search) : undefined },
+      vendido: false,
     },
     take: parsedLimit,
     skip: skip,
+  });
+
+  const prodAll = await prisma.produto.findMany({
+    where: {
+      usuario_id: usuario_id ? Number(usuario_id) : undefined,
+    },
   });
 
   const total = await prisma.produto.count();
@@ -35,7 +42,7 @@ route.get("/", async (req: Request, res: Response) => {
   res.set("X-Total-Count", total.toString());
 
   if (produtos) {
-    res.json(produtos);
+    res.json({ estoque: produtos, todos: prodAll });
   } else {
     res.status(404);
   }
@@ -45,6 +52,8 @@ route.get("/:id", async (req: Request, res: Response) => {
   const produto = await prisma.produto.findUnique({
     where: { id: Number(req.params.id) },
   });
+  console.log(produto);
+
   res.json(produto);
 });
 
@@ -58,6 +67,14 @@ route.post("/", upload.single("foto"), async (req: Request, res: Response) => {
       usuario_id: Number(req.body.usuario_id),
       vendido: req.body.vendido.toLowerCase() === "true",
     },
+  });
+  res.json(produto);
+});
+
+route.put("/:id", async (req: Request, res: Response) => {
+  const produto = await prisma.produto.update({
+    where: { id: Number(req.params.id) },
+    data: { ...req.body, id: undefined },
   });
   res.json(produto);
 });
