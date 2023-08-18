@@ -10,8 +10,6 @@ const router = useRouter()
 
 const props = defineProps(['produto'])
 
-const localstorage = JSON.parse(localStorage.getItem('user')) || ''
-
 const compra = computed(() => {
   return {
     comprador_id: store.usuario.id,
@@ -53,7 +51,7 @@ async function criarUsuario() {
         }
       })
       .then(() => {
-        headers.Authorization = `Bearer ${localstorage.token}`
+        headers.Authorization = `Bearer ${localStorage.token}`
         criarTransacao()
       })
   } catch (error) {
