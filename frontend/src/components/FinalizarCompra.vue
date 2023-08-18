@@ -10,7 +10,7 @@ const router = useRouter()
 
 const props = defineProps(['produto'])
 
-const localstorage = JSON.parse(localStorage.getItem('user'))
+const localstorage = JSON.parse(localStorage.getItem('user')) || ''
 
 const compra = computed(() => {
   return {
