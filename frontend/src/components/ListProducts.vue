@@ -47,8 +47,16 @@ onMounted(() => {
               :alt="product.nome"
             />
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
-            <h2 class="title">{{ product.nome }}</h2>
-            <p class="description">{{ product.descricao }}</p>
+            <h2 class="title">
+              {{ product.nome.length > 80 ? product.nome.substring(0, 80) + '...' : product.nome }}
+            </h2>
+            <p class="description">
+              {{
+                product.descricao.length > 100
+                  ? product.descricao.substring(0, 100) + '...'
+                  : product.descricao
+              }}
+            </p>
           </router-link>
         </div>
 
@@ -71,6 +79,10 @@ onMounted(() => {
   margin: 30px;
 }
 
+.title {
+  font-size: 1.3rem;
+}
+
 .products-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -82,6 +94,10 @@ onMounted(() => {
   background: #fff;
   border-radius: 4px;
   transition: all 0.3s;
+}
+
+.description {
+  overflow: hidden;
 }
 
 .product:hover {
