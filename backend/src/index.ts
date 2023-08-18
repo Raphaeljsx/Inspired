@@ -9,7 +9,7 @@ import { Router, Request, Response } from "express";
 
 const app = express();
 const route = Router();
-const port = 3333;
+const port = process.env.PORT ? Number(process.env.PORT) : 3333;
 
 app.use(express.static("public"));
 app.use(express.json());
