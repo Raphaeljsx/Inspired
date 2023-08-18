@@ -26,7 +26,7 @@ onMounted(() => {
   <section>
     <div v-if="produto" class="produto">
       <div class="fotos" v-if="produto.foto">
-        <img :src="'http://localhost:3333/' + produto.foto" :alt="produto.nome" />
+        <img :src="'https://inspired-database.onrender.com/' + produto.foto" :alt="produto.nome" />
       </div>
       <div class="info">
         <h1>{{ produto.nome }}</h1>

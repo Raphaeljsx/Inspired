@@ -5,7 +5,11 @@ const props = defineProps(['produto'])
 <template>
   <div class="produto" v-if="produto">
     <router-link class="produto-img" :to="{ name: 'produto', params: { id: produto.id } }">
-      <img v-if="produto.foto" :src="'http://localhost:3333/' + produto.foto" :alt="produto.nome" />
+      <img
+        v-if="produto.foto"
+        :src="'https://inspired-database.onrender.com/' + produto.foto"
+        :alt="produto.nome"
+      />
     </router-link>
     <div class="info">
       <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>
