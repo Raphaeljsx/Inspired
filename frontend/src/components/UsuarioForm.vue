@@ -36,9 +36,9 @@ function preencherCep() {
   if (cepNovo.length === 8) {
     fetchCep(cepNovo).then((response) => {
       rua.value = response.data.logradouro
-      this.value = response.data.bairro
-      this.value = response.data.localidade
-      this.value = response.data.uf
+      bairro.value = response.data.bairro
+      cidade.value = response.data.localidade
+      estado.value = response.data.uf
     })
   }
 }
