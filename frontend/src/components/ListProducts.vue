@@ -43,7 +43,7 @@ onMounted(() => {
             <img
               class="photo"
               v-if="product.foto"
-              :src="'http://localhost:3333/' + product.foto"
+              :src="'https://inspired-database.onrender.com/' + product.foto"
               :alt="product.nome"
             />
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
