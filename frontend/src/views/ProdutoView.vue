@@ -32,6 +32,7 @@ onMounted(() => {
         <h1>{{ produto.nome }}</h1>
         <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>
         <p class="descricao">{{ produto.descricao }}</p>
+
         <transition
           mode="out-in"
           v-if="produto.vendido === false && produto.usuario_id !== store.usuario.id"
