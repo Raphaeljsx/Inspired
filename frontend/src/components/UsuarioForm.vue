@@ -32,9 +32,9 @@ const cep = computed({
 })
 
 function preencherCep() {
-  const cep = this.cep.replace(/\D/g, '')
-  if (cep.length === 8) {
-    fetchCep(cep).then((response) => {
+  const cepNovo = cep.value.replace(/\D/g, '')
+  if (cepNovo.length === 8) {
+    fetchCep(cepNovo).then((response) => {
       this.rua = response.data.logradouro
       this.bairro = response.data.bairro
       this.cidade = response.data.localidade
