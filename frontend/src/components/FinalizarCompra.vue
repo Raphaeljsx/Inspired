@@ -22,8 +22,7 @@ const compra = computed(() => {
     numero: store.usuario.numero,
     bairro: store.usuario.bairro,
     cidade: store.usuario.cidade,
-    estado: store.usuario.estado,
-    token: localstorage.token
+    estado: store.usuario.estado
   }
 })
 
