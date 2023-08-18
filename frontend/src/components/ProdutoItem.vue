@@ -41,7 +41,8 @@ const props = defineProps(['produto'])
 .produto-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  resize: auto;
   margin-bottom: 20px;
 }
 
