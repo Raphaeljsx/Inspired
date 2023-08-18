@@ -27,7 +27,7 @@ const compra = computed(() => {
 })
 
 const headers = {
-  Authorization: `Bearer ${localstorage.token}`
+  Authorization: ''
 }
 
 function criarTransacao() {
@@ -41,8 +41,21 @@ function criarTransacao() {
 async function criarUsuario() {
   try {
     await store.criarUsuario(store.usuario)
-    await store.getUsuario(store.usuario.email, store.usuario.senha)
-    await criarTransacao()
+    await store
+      .getUsuario(store.usuario.email, store.usuario.senha)
+      .then(() => {
+        if (store.login === true) {
+          const user = {
+            ...store.usuario
+          }
+
+          localStorage.setItem('user', JSON.stringify(user))
+        }
+      })
+      .then(() => {
+        headers.Authorization = `Bearer ${localstorage.token}`
+        criarTransacao()
+      })
   } catch (error) {
     console.log(error)
   }
