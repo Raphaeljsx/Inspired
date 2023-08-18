@@ -42,7 +42,7 @@ function criarTransacao() {
 async function criarUsuario() {
   try {
     await store.criarUsuario(store.usuario)
-    await store.getUsuario(store.usuario.email)
+    await store.getUsuario(store.usuario.email, store.usuario.senha)
     await criarTransacao()
   } catch (error) {
     console.log(error)
