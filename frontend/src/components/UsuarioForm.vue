@@ -35,10 +35,10 @@ function preencherCep() {
   const cepNovo = cep.value.replace(/\D/g, '')
   if (cepNovo.length === 8) {
     fetchCep(cepNovo).then((response) => {
-      this.rua = response.data.logradouro
-      this.bairro = response.data.bairro
-      this.cidade = response.data.localidade
-      this.estado = response.data.uf
+      rua.value = response.data.logradouro
+      this.value = response.data.bairro
+      this.value = response.data.localidade
+      this.value = response.data.uf
     })
   }
 }
