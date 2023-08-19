@@ -29,7 +29,10 @@ export const useAuthStore = defineStore('auth', {
     },
     async updateUsuario(payload) {
       this.usuario = await Object.assign(this.usuario, payload)
-      localStorage.setItem('user', JSON.stringify(this.usuario))
+
+      if (!localStorage) {
+        localStorage.setItem('user', JSON.stringify(this.usuario))
+      }
     },
 
     update_Usuario_Produtos(payload) {

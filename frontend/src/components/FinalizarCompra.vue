@@ -60,7 +60,7 @@ function finalizarCompra() {
 <template>
   <section>
     <h2 class="titulo">Endereço de Envio</h2>
-    {{ store.login }}
+    <!-- {{ store.login }} -->
     <UsuarioForm>
       <button class="btn" @click.prevent="finalizarCompra">Finalizar Compra</button>
     </UsuarioForm>
