@@ -21,7 +21,7 @@ export const api = {
     return axiosInstance.delete(endpoint, options)
   },
   login(body) {
-    return axiosInstance.post('usuario/login/', body)
+    return axiosInstance.post('/usuario/login/', body)
   }
 }
 

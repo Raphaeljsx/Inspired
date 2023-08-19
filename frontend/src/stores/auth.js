@@ -50,7 +50,7 @@ export const useAuthStore = defineStore('auth', {
     },
     async getUsuario() {
       try {
-        return await api.get(`usuario/`).then((response) => {
+        return await api.get(`/usuario/`).then((response) => {
           this.updateUsuario(response.data)
           this.updateLogin(true)
         })
