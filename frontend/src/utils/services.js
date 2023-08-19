@@ -1,7 +1,10 @@
 import axios from 'axios'
 
+export const url_DEV = 'http://localhost:3333/'
+export const url_PROD = 'https://inspired-database.onrender.com'
+
 const axiosInstance = axios.create({
-  baseURL: 'https://inspired-database.onrender.com'
+  baseURL: url_PROD
 })
 
 export const api = {

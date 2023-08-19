@@ -1,11 +1,18 @@
 <script setup>
-import { computed } from 'vue'
+import { computed, watch } from 'vue'
 import { useAuthStore } from '../stores/auth'
 
 const store = useAuthStore()
 const shortsName = computed(() => {
   return store?.usuario?.nome?.split(' ')?.[0] || ''
 })
+
+watch(
+  () => store.usuario,
+  () => {
+    store.usuario.nome = null
+  }
+)
 </script>
 <template>
   <header>

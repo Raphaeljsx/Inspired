@@ -5,6 +5,7 @@ import { api } from '@/utils/services'
 import { serialize } from '@/utils/helpers'
 import productPagination from '@/components/PaginationProducts.vue'
 import LoadingPage from '@/components/PageLoading.vue'
+import { url_DEV, url_PROD } from '../utils/services'
 
 const products = ref(null)
 const productsPerPage = ref(9)
@@ -43,9 +44,16 @@ onMounted(() => {
             <img
               class="photo"
               v-if="product.foto"
-              :src="'https://inspired-database.onrender.com/' + product.foto"
+              :src="url_PROD + product.foto"
               :alt="product.nome"
             />
+            <!-- PROD -->
+            <!-- <img
+              class="photo"
+              v-if="product.foto"
+              :src="url_DEV + product.foto"
+              :alt="product.nome"
+            /> -->
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
             <h2 class="title">
               {{ product.nome.length > 80 ? product.nome.substring(0, 80) + '...' : product.nome }}

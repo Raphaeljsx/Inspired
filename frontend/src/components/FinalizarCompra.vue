@@ -24,36 +24,25 @@ const compra = computed(() => {
   }
 })
 
-const headers = {
-  Authorization: ''
-}
+const getHeaders = () => ({
+  Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}` || ''
+})
 
 function criarTransacao() {
-  return api.post('/transacao', compra.value, { headers }).then(() => {
-    api.put(`/produto/${props.produto.id}`, { vendido: true }, { headers }).then(() => {
-      router.push({ name: 'compras' })
-    })
+  return api.post('/transacao', compra.value, { headers: getHeaders() }).then(() => {
+    api
+      .put(`/produto/${props.produto.id}`, { vendido: true }, { headers: getHeaders() })
+      .then(() => {
+        router.push({ name: 'compras' })
+      })
   })
 }
 
 async function criarUsuario() {
   try {
     await store.criarUsuario(store.usuario)
-    await store
-      .getUsuario(store.usuario.email, store.usuario.senha)
-      .then(() => {
-        if (store.login === true) {
-          const user = {
-            ...store.usuario
-          }
-
-          localStorage.setItem('user', JSON.stringify(user))
-        }
-      })
-      .then(() => {
-        headers.Authorization = `Bearer ${localStorage.token}`
-        criarTransacao()
-      })
+    await store.getUsuario(store.usuario.email, store.usuario.senha)
+    await criarTransacao()
   } catch (error) {
     console.log(error)
   }
@@ -71,6 +60,7 @@ function finalizarCompra() {
 <template>
   <section>
     <h2 class="titulo">Endereço de Envio</h2>
+    {{ store.login }}
     <UsuarioForm>
       <button class="btn" @click.prevent="finalizarCompra">Finalizar Compra</button>
     </UsuarioForm>

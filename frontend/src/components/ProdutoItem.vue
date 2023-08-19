@@ -1,15 +1,13 @@
 <script setup>
+import { url_DEV, url_PROD } from '../utils/services'
 const props = defineProps(['produto'])
 </script>
 
 <template>
   <div class="produto" v-if="produto">
     <router-link class="produto-img" :to="{ name: 'produto', params: { id: produto.id } }">
-      <img
-        v-if="produto.foto"
-        :src="'https://inspired-database.onrender.com/' + produto.foto"
-        :alt="produto.nome"
-      />
+      <img v-if="produto.foto" :src="url_PROD + produto.foto" :alt="produto.nome" />
+      <!--PROD <img v-if="produto.foto" :src="url_DEV + produto.foto" :alt="produto.nome" /> -->
     </router-link>
     <div class="info">
       <p class="preco">{{ $filters.currencyBRL(produto.preco) }}</p>

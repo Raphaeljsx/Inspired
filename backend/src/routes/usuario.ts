@@ -15,9 +15,7 @@ route.post("/", async (req: Request, res: Response) => {
     data: { ...req.body, id: undefined },
   });
 
-  const token = jwt.sign(usuario, process.env.SECRET, { expiresIn: "1h" });
-
-  res.json({ ...usuario, token });
+  res.json({ ...usuario });
 });
 
 route.post("/login", async (req: Request, res: Response) => {
