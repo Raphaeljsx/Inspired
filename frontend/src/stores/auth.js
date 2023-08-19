@@ -78,8 +78,7 @@ export const useAuthStore = defineStore('auth', {
           numero: '',
           bairro: '',
           cidade: '',
-          estado: '',
-          token: null
+          estado: ''
         })
         this.updateLogin(false)
       } catch (error) {
