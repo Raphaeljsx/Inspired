@@ -66,11 +66,11 @@ export const useAuthStore = defineStore('auth', {
       }
     },
 
-    logarUsuario() {
+    logarUsuario(payload) {
       return api
         .login({
-          email: this.usuario.email,
-          senha: this.usuario.senha
+          email: payload.email,
+          senha: payload.senha
         })
         .then((response) => {
           console.log(response)
