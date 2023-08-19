@@ -18,7 +18,9 @@ onMounted(() => {
 })
 
 function logar() {
-  store.getUsuario(login.email, login.senha).then(() => {
+  store.logarUsuario(login).then(() => {
+    store.getUsuario()
+
     if (store.login === true) {
       const user = {
         ...store.usuario

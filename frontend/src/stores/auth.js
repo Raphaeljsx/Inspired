@@ -4,10 +4,10 @@ import { api } from '@/utils/services'
 export const useAuthStore = defineStore('auth', {
   //state --> Propriedades reativas
   state() {
-    let usuario = JSON.parse(localStorage.getItem('user'))
+    let storage = JSON.parse(localStorage.getItem('user'))
     return {
-      login: usuario ? true : false,
-      usuario: usuario || {
+      login: storage ? true : false,
+      usuario: storage || {
         id: '',
         nome: '',
         email: '',
@@ -48,11 +48,11 @@ export const useAuthStore = defineStore('auth', {
         this.update_Usuario_Produtos(response.data.todos)
       })
     },
-    async getUsuario(email, senha) {
+    async getUsuario() {
       try {
-        return await api.post(`/usuario/login/`, { email, senha }).then((response) => {
-          this.updateLogin(true)
+        return await api.get(`usuario/`).then((response) => {
           this.updateUsuario(response.data)
+          this.updateLogin(true)
         })
       } catch (error) {
         console.log(error)
@@ -64,6 +64,17 @@ export const useAuthStore = defineStore('auth', {
       } catch (error) {
         console.error('Erro ao criar usuário' + error)
       }
+    },
+
+    logarUsuario() {
+      return api
+        .login({
+          email: this.usuario.email,
+          senha: this.usuario.senha
+        })
+        .then((response) => {
+          console.log(response)
+        })
     },
 
     deslogarUsuario() {
