@@ -73,7 +73,7 @@ export const useAuthStore = defineStore('auth', {
           senha: payload.senha
         })
         .then((response) => {
-          console.log(response)
+          window.localStorage.token = `Bearer ${response.data.token}`
         })
     },
 
