@@ -27,8 +27,9 @@ export const useAuthStore = defineStore('auth', {
     updateLogin(payload) {
       this.login = payload
     },
-    updateUsuario(payload) {
-      this.usuario = Object.assign(this.usuario, payload)
+    async updateUsuario(payload) {
+      this.usuario = await Object.assign(this.usuario, payload)
+      localStorage.setItem('user', JSON.stringify(this.usuario))
     },
 
     update_Usuario_Produtos(payload) {
@@ -74,9 +75,9 @@ export const useAuthStore = defineStore('auth', {
           numero: '',
           bairro: '',
           cidade: '',
-          estado: ''
+          estado: '',
+          token: null
         })
-
         this.updateLogin(false)
       } catch (error) {
         console.error('Erro ao tentar deslogar: ' + error)

@@ -4,6 +4,7 @@ import { api } from '@/utils/services'
 import FinalizarCompra from '../components/FinalizarCompra.vue'
 import LoadingPage from '@/components/PageLoading.vue'
 import { useAuthStore } from '../stores/auth'
+import { url_DEV, url_PROD } from '../utils/services'
 
 const props = defineProps(['id'])
 const produto = ref(null)
@@ -26,7 +27,8 @@ onMounted(() => {
   <section>
     <div v-if="produto" class="produto">
       <div class="fotos" v-if="produto.foto">
-        <img :src="'https://inspired-database.onrender.com/' + produto.foto" :alt="produto.nome" />
+        <img :src="url_PROD + produto.foto" :alt="produto.nome" />
+        <!-- PROD <img :src="url_DEV + produto.foto" :alt="produto.nome" /> -->
       </div>
       <div class="info">
         <h1>{{ produto.nome }}</h1>

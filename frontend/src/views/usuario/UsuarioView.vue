@@ -6,8 +6,8 @@ const store = useAuthStore()
 const router = useRouter()
 
 function deslogar() {
-  store.deslogarUsuario()
   localStorage.removeItem('user')
+  store.deslogarUsuario()
   router.push('/login')
 }
 
