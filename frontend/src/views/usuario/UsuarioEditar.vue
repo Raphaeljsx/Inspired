@@ -26,7 +26,8 @@ function atualizarUsuario() {
       { headers }
     )
     .then(() => {
-      store.getUsuario(store.usuario.email)
+      // store.getUsuario(store.usuario.email)
+      store.getUsuario()
       router.push({ name: 'usuario' })
     })
     .catch((error) => {

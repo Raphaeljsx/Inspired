@@ -34,7 +34,7 @@ async function adicionarProduto() {
         }
       })
       .then(() => {
-        store.getUsuario_produtos(parsedUser.id)
+        store.getUsuario_produtos(store.usuario.id)
       })
   } catch (error) {
     console.error('Erro: ' + error)

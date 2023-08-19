@@ -19,7 +19,7 @@ onMounted(() => {
 
 function logar() {
   store.logarUsuario(login).then(() => {
-    store.getUsuario(login.email)
+    store.getUsuario()
 
     if (store.login === true) {
       const user = {

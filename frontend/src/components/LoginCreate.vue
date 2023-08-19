@@ -15,8 +15,8 @@ async function criarUsuario() {
     const emailValido = validaEmail(store.usuario.email)
     if (emailValido) {
       await store.criarUsuario(store.usuario)
-      await store.getUsuario(store.usuario.email, store.usuario.senha)
-
+      // await store.getUsuario(store.usuario.email, store.usuario.senha)
+      await store.getUsuario()
       const user = {
         ...store.usuario
       }
