@@ -12,10 +12,12 @@ route.get("/", async (req: Request, res: Response) => {
 
 route.post("/", async (req: Request, res: Response) => {
   const usuario = await prisma.usuario.create({
-    data: { ...req.body, id: undefined },
+    data: { ...req.body, id: undefined, token: undefined },
   });
 
-  res.json({ ...usuario });
+  const token = jwt.sign(usuario, process.env.SECRET, { expiresIn: "1h" });
+
+  res.json({ ...usuario, token });
 });
 
 route.post("/login", async (req: Request, res: Response) => {

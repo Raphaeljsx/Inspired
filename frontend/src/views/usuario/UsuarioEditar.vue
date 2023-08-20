@@ -8,26 +8,23 @@ import { api } from '../../utils/services'
 const store = useAuthStore()
 const router = useRouter()
 
-const localstorage = JSON.parse(localStorage.getItem('user'))
-
 onMounted(() => {
   document.title = 'Usuário | Editar'
 })
 
-const headers = {
-  Authorization: `Bearer ${localstorage.token}`
-}
+const getHeaders = () => ({
+  Authorization: `Bearer ${JSON.parse(localStorage.getItem('user')).token}` || ''
+})
 
 function atualizarUsuario() {
   api
     .put(
       `/usuario/${store.usuario.id}`,
       { ...store.usuario, token: undefined, login: undefined },
-      { headers }
+      { headers: getHeaders() }
     )
     .then(() => {
-      // store.getUsuario(store.usuario.email)
-      store.getUsuario()
+      store.updateUsuario(store.usuario)
       router.push({ name: 'usuario' })
     })
     .catch((error) => {

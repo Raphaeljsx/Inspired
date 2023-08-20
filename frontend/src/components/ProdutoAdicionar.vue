@@ -19,7 +19,7 @@ const fileInput = ref(null)
 
 async function adicionarProduto() {
   const formData = new FormData()
-  formData.append('usuario_id', parsedUser.id)
+  formData.append('usuario_id', store.usuario.id)
   formData.append('foto', fileInput.value.files[0])
   formData.append('preco', produto.preco)
   formData.append('nome', produto.nome)

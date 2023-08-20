@@ -11,6 +11,7 @@ const router = useRouter()
 const props = defineProps(['produto'])
 
 const compra = computed(() => {
+  console.log('Usuário criado na compra: ', store.usuario)
   return {
     comprador_id: store.usuario.id,
     vendedor_id: props.produto.usuario_id,
@@ -41,8 +42,7 @@ function criarTransacao() {
 async function criarUsuario() {
   try {
     await store.criarUsuario(store.usuario)
-    // await store.getUsuario(store.usuario.email, store.usuario.senha)
-    await store.getUsuario()
+    console.log('Logando com o usuário criado', store.usuario)
     await criarTransacao()
   } catch (error) {
     console.log(error)
