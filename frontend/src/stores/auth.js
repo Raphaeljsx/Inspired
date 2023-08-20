@@ -29,10 +29,8 @@ export const useAuthStore = defineStore('auth', {
     },
     async updateUsuario(payload) {
       this.usuario = await Object.assign(this.usuario, payload)
-
-      if (!localStorage) {
-        localStorage.setItem('user', JSON.stringify(this.usuario))
-      }
+      localStorage.setItem('user', JSON.stringify(this.usuario))
+      window.localStorage.token = `Bearer ${this.usuario.token}`
     },
 
     update_Usuario_Produtos(payload) {
@@ -48,33 +46,25 @@ export const useAuthStore = defineStore('auth', {
         this.update_Usuario_Produtos(response.data.todos)
       })
     },
-    async getUsuario() {
-      try {
-        return await api.get(`/usuario/`).then((response) => {
-          this.updateUsuario(response.data)
-          this.updateLogin(true)
-        })
-      } catch (error) {
-        console.log(error)
-      }
-    },
+
     async criarUsuario(paylod) {
       try {
-        return await api.post('/usuario/', paylod)
+        const response = await api.post('/usuario/', paylod)
+        this.updateUsuario(response.data)
+        this.updateLogin(true)
       } catch (error) {
         console.error('Erro ao criar usuário' + error)
       }
     },
 
-    logarUsuario(payload) {
-      return api
-        .login({
-          email: payload.email,
-          senha: payload.senha
-        })
-        .then((response) => {
-          window.localStorage.token = `Bearer ${response.data.token}`
-        })
+    async logarUsuario(payload) {
+      const response = await api.login({
+        email: payload.email,
+        senha: payload.senha
+      })
+
+      this.updateUsuario(response.data)
+      this.updateLogin(true)
     },
 
     deslogarUsuario() {
@@ -89,7 +79,8 @@ export const useAuthStore = defineStore('auth', {
           numero: '',
           bairro: '',
           cidade: '',
-          estado: ''
+          estado: '',
+          token: null
         })
         this.updateLogin(false)
       } catch (error) {

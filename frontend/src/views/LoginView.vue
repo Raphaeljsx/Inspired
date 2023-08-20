@@ -19,8 +19,6 @@ onMounted(() => {
 
 function logar() {
   store.logarUsuario(login).then(() => {
-    store.getUsuario()
-
     if (store.login === true) {
       const user = {
         ...store.usuario
