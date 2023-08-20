@@ -27,8 +27,8 @@ onMounted(() => {
   <section>
     <div v-if="produto" class="produto">
       <div class="fotos" v-if="produto.foto">
-        <!-- <img :src="url_PROD + produto.foto" :alt="produto.nome" /> -->
-        <img :src="url_DEV + produto.foto" :alt="produto.nome" />
+        <img :src="url_PROD + produto.foto" :alt="produto.nome" />
+        <!-- <img :src="url_DEV + produto.foto" :alt="produto.nome" /> -->
       </div>
       <div class="info">
         <h1>{{ produto.nome }}</h1>

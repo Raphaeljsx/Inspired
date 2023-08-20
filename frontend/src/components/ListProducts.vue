@@ -41,19 +41,19 @@ onMounted(() => {
       <div v-if="products && products.length" class="products" key="products">
         <div class="product" v-for="product in products" :key="product.id">
           <router-link :to="{ name: 'produto', params: { id: product.id } }">
-            <!-- <img
+            <img
               class="photo"
               v-if="product.foto"
               :src="url_PROD + product.foto"
               :alt="product.nome"
-            /> -->
+            />
             <!-- PROD -->
-            <img
+            <!-- <img
               class="photo"
               v-if="product.foto"
               :src="url_DEV + product.foto"
               :alt="product.nome"
-            />
+            /> -->
             <p class="prize">{{ $filters.currencyBRL(product.preco) }}</p>
             <h2 class="title">
               {{ product.nome.length > 80 ? product.nome.substring(0, 80) + '...' : product.nome }}
