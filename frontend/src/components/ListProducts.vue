@@ -41,12 +41,12 @@ onMounted(() => {
       <div v-if="products && products.length" class="products" key="products">
         <div class="product" v-for="product in products" :key="product.id">
           <router-link :to="{ name: 'produto', params: { id: product.id } }">
-            <img
+            <!-- <img
               class="photo"
               v-if="product.foto"
               :src="url_PROD + product.foto"
               :alt="product.nome"
-            />
+            /> -->
             <!-- PROD -->
             <!-- <img
               class="photo"
