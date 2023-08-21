@@ -6,7 +6,7 @@ const props = defineProps(['produto'])
 <template>
   <div class="produto" v-if="produto">
     <router-link class="produto-img" :to="{ name: 'produto', params: { id: produto.id } }">
-      <img v-if="produto.foto" :src="url_PROD + produto.foto" :alt="produto.nome" />
+      <!-- <img v-if="produto.foto" :src="url_PROD + produto.foto" :alt="produto.nome" /> -->
       <!-- <img v-if="produto.foto" :src="url_DEV + produto.foto" :alt="produto.nome" /> -->
     </router-link>
     <div class="info">
